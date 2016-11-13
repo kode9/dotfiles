@@ -1,0 +1,103 @@
+# Git configuration file
+# Pierre-Luc Perrier <pluc-dev@the-pluc.net>
+#
+# Credits:
+#   https://git.wiki.kernel.org/index.php/Aliases
+#   https://github.com/dotphiles/dotphiles/blob/master/git/gitconfig
+#
+
+[user]
+	name = Pierre-Luc Perrier
+	email = pluc-dev@the-pluc.net
+
+[branch]
+	autosetuprebase = remote
+
+[branch "master"]
+	merge = refs/heads/master
+	remote = origin
+
+[core]
+	askpass = git-gui--askpass
+	editor = emacsclient
+	excludesfile = ~/.gitignore-global
+	preloadindex = true
+  pager = less -FRSX
+  whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+
+[color]
+	ui = auto
+
+[diff]
+	renamelimit = 0
+
+[log]
+	decorate=full
+
+[push]
+	default = simple
+
+[svn]
+	rmdir = 1
+
+[webui]
+	autoupdate = true
+
+# Aliases (tries to follow magit conventions as I mainly use magit as git client).
+[alias]
+  s = status --short
+  ss = status
+
+  b = branch
+  bb = checkout
+  bc = checkout -b
+  bn = branch
+  bk = branch -d
+  bK = branch -D
+  bm = branch -m
+  bx = branch --force
+
+  d = diff
+  du = diff
+  ds = diff --staged
+  dw = diff HEAD
+
+  c = commit
+  cc = commit
+  ca = commit --amend
+  cf = !sh -c 'git commit --no-edit --fixup=${1} --' -
+  cs = !sh -c 'git commit --no-edit --squash=${1} --' -
+
+  r = rebase
+  ri = rebase -i --root --autosquash
+  ra  = rebase --abort
+  rc  = rebase --continue
+
+  fa = remote update --prune
+  fp = fetch origin --prune
+
+  F = pull
+  Fp = pull
+
+  p = push
+  pt = push --tags
+
+  M = remote
+  Ml = remote -v
+
+  z = stash
+  zz = stash save
+  zp = stash pop --index
+  zl = stash list
+  za = stash apply --index
+  zw = stash save --keep-index
+
+  l = log --graph --topo-order --pretty=format:'%C(yellow)%h%Creset -%C(bold yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  ll = log --graph --topo-order --stat
+  who = shortlog --summary --numbered
+	# Find someone and display full name / email address
+	whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+
+	# Serve repo on the spot
+	serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
+  webui = !/home/pluc/.git-webui/release/libexec/git-core/git-webui
