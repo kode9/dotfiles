@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -e
+
+readonly CONFIG="install.yaml"
+readonly DOTBOT_DIR="3dparty/dotbot"
+readonly DOTBOT_BIN="bin/dotbot"
+readonly BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+cd "${BASEDIR}"
+git submodule update --init --recursive "${DOTBOT_DIR}"
+
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+
+exit 0

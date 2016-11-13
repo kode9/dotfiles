@@ -1,0 +1,10 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+      force:  false
+
+- clean: ['~']
+
+- link:
+    ~/.gitconfig: git/gitconfig
