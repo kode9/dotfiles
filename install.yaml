@@ -9,3 +9,5 @@
 - link:
     ~/.config/git/ignore: git/gitignore
     ~/.gitconfig: git/gitconfig
+    ~/.xinitrc: X11/xinitrc
+    ~/.Xresources: X11/Xresources

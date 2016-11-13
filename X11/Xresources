@@ -1,0 +1,132 @@
+#define THEME_ZENBURN
+
+#define FONT_REGULAR xft:Hack:style=Regular:pixelsize=12
+#define FONT_BOLD xft:Hack:style=Bold:pixelsize=12
+#define FONT_ITALIC xft:Hack:style=Italic:pixelsize=12
+#define FONT_BOLD_ITALIC xft:Hack:style=Bold Italic:pixelsize=12
+
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+!!!!!!!!!!!!!!!!
+! rxvt-unicode !
+!!!!!!!!!!!!!!!!
+! To get the the complete list of urxvt options (https://wiki.archlinux.org/index.php/Urxvt) :
+! urxvt --help 2>&1| sed -n '/:  /s/^ */! URxvt./gp' >> ~/.Xresources
+
+! Fade the text by the given percentage when focus is lost; option -fade.
+URxvt.fading: 40
+
+! True: enable the scrollbar [default]; option -sb. False: disable the scrollbar; option +sb.
+URxvt.scrollBar: false
+! True: start as a login shell by prepending a - to argv[0] of the
+! shell; option -ls. False: start as a normal sub-shell [default];
+URxvt.loginShell: false
+! True: specify that jump scrolling should be used. When receiving
+! lots of lines, urxvt will only scroll once a whole screen height of
+URxvt.jumpScroll: true
+! True: (the default) specify that skip scrolling should be used. When
+! receiving lots of lines, urxvt will only scroll once in a while
+URxvt.skipScroll: false
+! True: scroll to bottom when tty receives output; option -si.  False:
+! do not scroll to bottom when tty receives output; option +si.
+URxvt.scrollTtyOutput: false
+! True: scroll with scrollback buffer when tty receives new lines
+! (i.e.  try to show the same lines) and scrollTtyOutput is False;
+URxvt.scrollWithBuffer: false
+! True: scroll to bottom when a non-special key is pressed. Special
+! keys are those which are intercepted by rxvt-unicode for special
+URxvt.scrollTtyKeypress: true
+! Save number lines in the scrollback buffer [default 64]. This
+! resource is limited on most machines to 65535; option -sl.
+URxvt.saveLines: 65535
+! Create the window with the specified X window geometry [default
+! 80x24]; option -geometry.
+URxvt.geometry: 105x40
+! Select the fonts to be used. This is a comma separated list of font
+! names that are checked in order when trying to find glyphs for
+URxvt.font: FONT_REGULAR
+URxvt.boldFont: FONT_BOLD
+URxvt.italicFont: FONT_ITALIC
+URxvt.boldItalicFont: FONT_BOLD_ITALIC
+! When font styles are not enabled, or this option is enabled (True,
+! option -is, the default), bold/blink font styles imply high
+URxvt.intensityStyles: false
+! True: set the urgency hint for the wm on receipt of a bell
+! character.  False: do not set the urgency hint [default].
+URxvt.urgentOnBell: true
+! Set MWM hints to request a borderless window, i.e. if honoured by
+! the WM, the rxvt-unicode window will not have window decorations;
+URxvt.borderLess: false
+! True: handle Meta (Alt) + keypress to set the 8th bit. False: handle
+! Meta (Alt) + keypress as an escape prefix [default].
+URxvt.meta8: false
+! True: store tabs as wide characters. False: interpret tabs as cursor
+! movement only; option "-ptab".
+URxvt.pastableTabs: false
+! Enables "insecure" mode. Rxvt-unicode offers some escape sequences
+! that echo arbitrary strings like the icon name or the locale.
+URxvt.insecure: false
+! blank the cursor when typing or inactive
+URxvt.pointerBlank: false
+! Perl extentions
+URxvt.perl-ext-common: default,matcher,tabbed
+
+! Colors
+#ifdef THEME_ZENBURN
+#define ZENBURN_FG             #dcdccc
+#define ZENBURN_BG             #3f3f3f
+#define ZENBURN_DARK_RED       #705050
+#define ZENBURN_DARK_GREEN     #60b48a
+#define ZENBURN_DARK_YELLOW    #dfaf8f
+#define ZENBURN_DARK_BLUE      #506070
+#define ZENBURN_DARK_MAGENTA   #dc8cc3
+#define ZENBURN_DARK_CYAN      #8cd0d3
+#define ZENBURN_DARK_GRAY      #709080
+#define ZENBURN_LIGHT_RED      #dca3a3
+#define ZENBURN_LIGHT_GREEN    #c3bf9f
+#define ZENBURN_LIGHT_YELLOW   #f0dfaf
+#define ZENBURN_LIGHT_BLUE     #94bff3
+#define ZENBURN_LIGHT_MAGENTA  #ec93d3
+#define ZENBURN_LIGHT_CYAN     #93e0e3
+#define ZENBURN_WHITE          #ffffff
+
+URxvt.background: ZENBURN_BG
+URxvt.foreground: ZENBURN_FG
+
+URxvt.color0: ZENBURN_BG
+URxvt.color1: ZENBURN_DARK_RED
+URxvt.color2: ZENBURN_DARK_GREEN
+URxvt.color3: ZENBURN_DARK_YELLOW
+URxvt.color4: ZENBURN_DARK_BLUE
+URxvt.color5: ZENBURN_DARK_MAGENTA
+URxvt.color6: ZENBURN_DARK_CYAN
+URxvt.color7: ZENBURN_FG
+URxvt.color8: ZENBURN_DARK_GRAY
+URxvt.color9: ZENBURN_LIGHT_RED
+URxvt.color10: ZENBURN_LIGHT_GREEN
+URxvt.color11: ZENBURN_LIGHT_YELLOW
+URxvt.color12: ZENBURN_LIGHT_BLUE
+URxvt.color13: ZENBURN_LIGHT_MAGENTA
+URxvt.color14: ZENBURN_LIGHT_CYAN
+URxvt.color15: ZENBURN_WHITE
+
+URxvt.colorUL: ZENBURN_LIGHT_RED
+URxvt.colorBD: ZENBURN_LIGHT_YELLOW
+
+URxvt.cursorColor: ZENBURN_FG
+URxvt.pointerColor: ZENBURN_FG
+URxvt.pointerColor2: ZENBURN_BG
+URxvt.scrollColor: ZENBURN_DARK_YELLOW
+URxvt.borderColor: ZENBURN_DARK_BLUE
+#endif
+
+! Specifies the program to be started with a URL argument. Used by the
+! "selection-popup" and "matcher" perl extensions.
+URxvt.url-launcher: xdg-open
+! Left click to open url (default middle click)
+URxvt.matcher.button: 1
