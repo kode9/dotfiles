@@ -21,6 +21,7 @@
 	askpass = git-gui--askpass
 	editor = emacsclient
 	preloadindex = true
+  abbrev = 10
   pager = less -FRSX
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 
@@ -29,12 +30,25 @@
 
 [diff]
 	renamelimit = 0
+	algorithm = histogram
 
 [log]
 	decorate=full
 
+[merge]
+	conflictstyle = diff3
+	ff = true
+	log = 10
+	verbosity = 1
+
+[pull]
+	rebase = preserve
+
 [push]
 	default = simple
+
+[rerere]
+	enabled = true
 
 [svn]
 	rmdir = 1
