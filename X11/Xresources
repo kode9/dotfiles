@@ -1,9 +1,9 @@
 #define THEME_ZENBURN
 
-#define FONT_REGULAR xft:Hack:style=Regular:pixelsize=12
-#define FONT_BOLD xft:Hack:style=Bold:pixelsize=12
-#define FONT_ITALIC xft:Hack:style=Italic:pixelsize=12
-#define FONT_BOLD_ITALIC xft:Hack:style=Bold Italic:pixelsize=12
+#define FONT_REGULAR xft:Hack:style=Regular:pixelsize=13
+#define FONT_BOLD xft:Hack:style=Bold:pixelsize=13
+#define FONT_ITALIC xft:Hack:style=Italic:pixelsize=13
+#define FONT_BOLD_ITALIC xft:Hack:style=Bold Italic:pixelsize=13
 
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
