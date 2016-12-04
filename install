@@ -1,15 +1,24 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
-set -e
+# http://stackoverflow.com/a/29835459/1024122
+readonly _basedir=$(CDPATH= cd -- "$(dirname -- "${0}")" && pwd -P)
+readonly _dotbot_dir='3dparty/dotbot'
+readonly _dotbot_bin="${_dotbot_dir}/bin/dotbot"
+readonly _config='install.yaml'
 
-readonly CONFIG="install.yaml"
-readonly DOTBOT_DIR="3dparty/dotbot"
-readonly DOTBOT_BIN="bin/dotbot"
-readonly BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+[ -d "${_basedir}" ] && [ -x "${_basedir}" ] \
+    || { echo "Failed to get base directory" >&2; exit 1; }
 
-cd "${BASEDIR}"
-git submodule update --init --recursive "${DOTBOT_DIR}"
+cd -- "${_basedir}" >/dev/null
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" -v "${@}"
+[ -d "${_dotbot_dir}" ] && [ -x "${_dotbot_dir}" ] \
+    || { echo "Cannot find dotbot directory [${_dotbot_dir}]" >&2; exit 1; }
+[ -f "${_dotbot_bin}" ] && [ -x "${_dotbot_bin}" ] \
+    || { echo "Dotbot binary [${_dotbot_bin}] does not exist or is not executable" >&2; exit 1; }
+[ -f "${_config}" ] \
+    || { echo "Cannot find dotbot config [${_config}]" >&2; exit 1; }
+
+git submodule --quiet update --init --recursive -- "${_dotbot_dir}"
+"${_dotbot_bin}" -d "${_basedir}" -c "${_config}" -v "${@}"
 
 exit 0
