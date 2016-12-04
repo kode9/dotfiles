@@ -42,7 +42,7 @@ override_git_prompt_colors() {
     local -r _blue_setfg="$(tput setaf ${_code_blue})"
     local -r _cyan_setfg="$(tput setaf ${_code_cyan})"
     local -r _green_setfg="$(tput setaf ${_code_green})"
-    local -r _pink_setfg="$(tput setaf ${_color_pink})"
+    local -r _pink_setfg="$(tput setaf ${_code_pink})"
     local -r _red_setfg="$(tput setaf ${_code_red})"
     local -r _yellow_setfg="$(tput setaf ${_code_yellow})"
 
