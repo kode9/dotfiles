@@ -36,8 +36,8 @@ override_git_prompt_colors() {
     local -r _user="\u"
     local -r _host="\h"
 
-    GIT_PROMPT_THEME_NAME="Pluc"        # Name of this theme
-    GIT_PROMPT_ONLY_IN_REPO=1             # Display git promp only when in a repo
+    GIT_PROMPT_THEME_NAME="Pluc"          # Name of this theme
+    GIT_PROMPT_ONLY_IN_REPO=0             # Always use git promp
     GIT_PROMPT_FETCH_REMOTE_STATUS=0      # Do not fetch remotes
     unset -v GIT_PROMPT_SHOW_UPSTREAM     # Do not show upstream branches
     GIT_PROMPT_SHOW_UNTRACKED_FILES=no    # {no, normal, all}
