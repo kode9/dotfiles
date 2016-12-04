@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#
+# ~/.bash_profile
+#
+# Read by Bash when invoked as a login shell, i.e when logging on a console or
+# through SSH.
+
+# Just forward to .bashrc
+[[ -f ~/.bashrc ]] && . ~/.bashrc

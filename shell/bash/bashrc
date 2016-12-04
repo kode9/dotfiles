@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+#
+# ~/.bashrc
+#
+# Read by Bash when invoked as an interactive non-login shell, i.e from a
+# terminal.
+#
+# http://mywiki.wooledge.org/BashFAQ/037
+# http://wiki.bash-hackers.org/scripting/terminalcodes
+# https://www.gnu.org/software/bash/manual/bashref.html#Bash-Startup-Files
+
+# Check system settings
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+elif [ -f /etc/bash.bashrc ]; then
+    . /etc/bash.bashrc
+fi
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+## For emacs/tramp or other dumb clients
+if [[ $TERM == "dumb" ]]; then
+    PS1='> '
+    PS2='> '
+    return
+fi
+
+# Enable system bash completion
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+elif [ -f /use/share/bash-completion/bash_completion ]; then
+    . /use/share/bash-completion/bash_completion
+fi
+
+# HISTORY
+## Options
+### - histappend: append to the history file, don't overwrite it;
+### - cmdhist   : try to save multi-line command in a single history entry;
+### - lithist   : (with cmdhist) Use newlines instead of semicolon separators
+shopt -s histappend cmdhist lithist
+## The number of commands to remember in the command history. Negative is no
+## limit
+export HISTSIZE=-1
+## The number of commands to keep in tge history file. Negative is no limit
+export HISTFILESIZE=-1
+## A colon-separated list of values controlling how commands are saved on the
+## history list (ignorespace, ignoredups, ignoreboth, erasedups)
+export HISTCONTROL=erasedups
+## A colon-separated list of patterns to forget
+export HISTIGNORE='ls:ll:la:bg:fg:exit:pwd:clear:history'
+
+# Misc options
+## autocd      : cd without cd;
+## cdspell     : fix minor spelling errors in cd;
+## checkjobs   : list jobs on exit and defer exit if any are running;
+## checkwinsize: udpate lines/columns after each commands (DISABLED);
+## dirspell    : fix minor spelling errors during word completion;
+## globstar    : expand '**' pattern;
+## nocaseglob  : ignore case during pathname expansion;
+## nocasematch : ignore case during word expansion and command completion;
+shopt -s autocd cdspell checkjobs dirspell globstar nocaseglob nocasematch
+
+# PROMPT
+# https://github.com/magicmonty/bash-git-prompt
+_git_prompt_file=~/.dotfiles/3dparty/bash-git-prompt/gitprompt.sh
+GIT_PROMPT_THEME_FILE=~/.dotfiles/shell/bash/git-prompt-colors.sh
+[[ -f ${_git_prompt_file} ]] && source ${_git_prompt_file}
+unset -v _git_prompt_file
+
+# Source alias definitions
+[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
