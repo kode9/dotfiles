@@ -16,10 +16,18 @@ elif [ -f /etc/bash.bashrc ]; then
     . /etc/bash.bashrc
 fi
 
+# PATH
+_abz_paths=(~/usr/bin)
+for _path in ${_abz_paths[@]} ; do
+    # http://unix.stackexchange.com/a/217626
+    [[ -d "${_path}" && ":${PATH}:" != *":${_path}:"* ]] && PATH="${_path}:${PATH}"
+done
+unset -v _path _abz_paths
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-## For emacs/tramp or other dumb clients
+# For emacs/tramp or other dumb clients
 if [[ $TERM == "dumb" ]]; then
     PS1='> '
     PS2='> '
