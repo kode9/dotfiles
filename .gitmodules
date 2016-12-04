@@ -1,3 +1,6 @@
 [submodule "dotbot"]
 	path = 3dparty/dotbot
 	url = https://github.com/anishathalye/dotbot.git
+[submodule "bash-git-prompt"]
+	path = 3dparty/bash-git-prompt
+	url = https://github.com/magicmonty/bash-git-prompt.git
