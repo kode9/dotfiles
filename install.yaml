@@ -22,3 +22,7 @@
     ~/.bash_logout: shell/bash/bash_logout
     ~/.bash_profile: shell/bash/bash_profile
     ~/.bashrc: shell/bash/bashrc
+    ~/.makepkg.conf: arch/makepkg.conf
+
+- shell:
+    - [mkdir -p ~/usr/aur/build ~/usr/aur/packages ~/usr/aur/logs, Create directories]
