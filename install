@@ -13,12 +13,14 @@ cd -- "${_basedir}" >/dev/null
 
 [ -d "${_dotbot_dir}" ] && [ -x "${_dotbot_dir}" ] \
     || { echo "Cannot find dotbot directory [${_dotbot_dir}]" >&2; exit 1; }
-[ -f "${_dotbot_bin}" ] && [ -x "${_dotbot_bin}" ] \
-    || { echo "Dotbot binary [${_dotbot_bin}] does not exist or is not executable" >&2; exit 1; }
 [ -f "${_config}" ] \
     || { echo "Cannot find dotbot config [${_config}]" >&2; exit 1; }
 
 git submodule --quiet update --init --recursive -- "${_dotbot_dir}"
+
+[ -f "${_dotbot_bin}" ] && [ -x "${_dotbot_bin}" ] \
+    || { echo "Dotbot binary [${_dotbot_bin}] does not exist or is not executable" >&2; exit 1; }
+
 "${_dotbot_bin}" -d "${_basedir}" -c "${_config}" -v "${@}"
 
 exit 0
