@@ -26,26 +26,51 @@ prompt_callback() {
 }
 
 override_git_prompt_colors() {
-    local -r _color_pink="$(tput setaf 181)"
-    local -r _color_red="$(tput setaf 174)"
+    # color codes for tput
+    local -r _code_black=16
+    local -r _code_blue=111
+    local -r _code_cyan=116
+    local -r _code_green=157
+    local -r _code_pink=181
+    local -r _code_red=174
+    local -r _code_yellow=187
 
     local -r _bold="$(tput bold)"
 
-    local -r _color_blue="${_abz_beg}$(tput setaf 111)${_abz_end}"
-    local -r _color_cyan="${_abz_beg}$(tput setaf 116)${_abz_end}"
-    local -r _color_green="${_abz_beg}$(tput setaf 157)${_abz_end}"
-    local -r _color_yellow="${_abz_beg}$(tput setaf 187)${_abz_end}"
-    local -r _pink="${_abz_beg}${_color_pink}${_abz_end}"
-    local -r _pink_bold="${_abz_beg}${_bold}${_color_pink}${_abz_end}"
-    local -r _red="${_abz_beg}${_color_red}${_abz_end}"
-    local -r _red_bold="${_abz_beg}${_bold}${_color_red}${_abz_end}"
+    # tput foreground commands
+    local -r _black_setfg="$(tput setaf ${_code_black})"
+    local -r _blue_setfg="$(tput setaf ${_code_blue})"
+    local -r _cyan_setfg="$(tput setaf ${_code_cyan})"
+    local -r _green_setfg="$(tput setaf ${_code_green})"
+    local -r _pink_setfg="$(tput setaf ${_color_pink})"
+    local -r _red_setfg="$(tput setaf ${_code_red})"
+    local -r _yellow_setfg="$(tput setaf ${_code_yellow})"
+
+    # tput background commands
+    local -r _red_setbg="$(tput setab ${_code_red})"
+
+    # foreground sequences
+    local -r _black_fg="${_abz_beg}${_black_setfg}${_abz_end}"
+    local -r _blue_fg="${_abz_beg}${_blue_setfg}${_abz_end}"
+    local -r _cyan_fg="${_abz_beg}${_cyan_setfg}${_abz_end}"
+    local -r _green_fg="${_abz_beg}${_green_setfg}${_abz_end}"
+    local -r _pink_fg="${_abz_beg}${_pink_setfg}${_abz_end}"
+    local -r _red_fg="${_abz_beg}${_red_setfg}${_abz_end}"
+    local -r _yellow_fg="${_abz_beg}${_yellow_setfg}${_abz_end}"
+
+    # foreground bold sequences
+    local -r _pink_fg_bold="${_abz_beg}${_bold}${_pink_setfg}${_abz_end}"
+    local -r _red_fg_bold="${_abz_beg}${_bold}${_red_setfg}${_abz_end}"
+
+    # background bold sequences
+    local -r _red_bg_bold="${_abz_beg}${_bold}${_red_setbg}${_abz_end}"
 
     local -r _user="\u"
     local _host=''
 
     # http://unix.stackexchange.com/a/9606
     if [[ -n "${SSH_CLIENT}" || -n "$SSH_TTY" || -n "$SSH_CONNECTION" ]]; then
-        _host="${_pink_bold}@\h${_abz_reset}"
+        _host="${_pink_fg_bold}@\h${_abz_reset}"
     fi
 
     GIT_PROMPT_THEME_NAME="Pluc"          # Name of this theme
@@ -56,23 +81,23 @@ override_git_prompt_colors() {
     GIT_PROMPT_SHOW_CHANGED_FILES_COUNT=1 # Show number of modified files
     GIT_PROMPT_IGNORE_STASH=1             # Dont show stash info
 
-    GIT_PROMPT_COMMAND_OK="${_color_green}√" # When last command succeed
-    GIT_PROMPT_COMMAND_FAIL="${_red}✘"       # When last command failed
-    GIT_PROMPT_START_USER="${_color_blue}${_user}${_abz_reset}${_host} "
-    GIT_PROMPT_END_USER=" _LAST_COMMAND_INDICATOR_ ${_color_yellow}"
-    GIT_PROMPT_START_ROOT="${_red_bold}${_user}${_abz_reset}${_host} "
+    GIT_PROMPT_COMMAND_OK="${_green_fg}√" # When last command succeed
+    GIT_PROMPT_COMMAND_FAIL="${_red_fg}✘"       # When last command failed
+    GIT_PROMPT_START_USER="${_blue_fg}${_user}${_abz_reset}${_host} "
+    GIT_PROMPT_END_USER=" _LAST_COMMAND_INDICATOR_ ${_yellow_fg}"
+    GIT_PROMPT_START_ROOT="${_black_fg}${_red_bg_bold}${_user}${_abz_reset}${_host} "
     GIT_PROMPT_END_ROOT=${GIT_PROMPT_END_USER}
     GIT_PROMPT_PREFIX="("
     GIT_PROMPT_SUFFIX=")"
     GIT_PROMPT_SEPARATOR=""
-    GIT_PROMPT_BRANCH="${_color_blue}"     # Current branch
-    GIT_PROMPT_REMOTE=" "                  # Remote branch
-    GIT_PROMPT_STAGED="${_color_green}●"   # Staged files
-    GIT_PROMPT_CHANGED="${_abz_orange}◐"   # Modified files
-    GIT_PROMPT_CONFLICTS="${_red}◌"        # Conflicting files
-    GIT_PROMPT_UNTRACKED="${_color_cyan}○" # Untracked files
-    GIT_PROMPT_STASHED=""                  # Number of stashes
-    GIT_PROMPT_CLEAN=""                    # When everything is clean
+    GIT_PROMPT_BRANCH="${_blue_fg}"      # Current branch
+    GIT_PROMPT_REMOTE=" "                # Remote branch
+    GIT_PROMPT_STAGED="${_green_fg}●"    # Staged files
+    GIT_PROMPT_CHANGED="${_abz_orange}◐" # Modified files
+    GIT_PROMPT_CONFLICTS="${_red_fg}◌"   # Conflicting files
+    GIT_PROMPT_UNTRACKED="${_cyan_fg}○"  # Untracked files
+    GIT_PROMPT_STASHED=""                # Number of stashes
+    GIT_PROMPT_CLEAN=""                  # When everything is clean
 
     ## Please do not add colors to these symbols
     GIT_PROMPT_SYMBOLS_AHEAD="▲"              # Symbol for "n versions ahead of origin"
