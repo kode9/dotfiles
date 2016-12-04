@@ -6,6 +6,12 @@
 
 - clean: ['~']
 
+- shell:
+  -
+    command: git submodule --quiet update --init --recursive
+    description: Checking submodules
+    stderr: true
+
 - link:
     ~/.dotfiles: ''
     ~/.config/git/ignore: git/gitignore
