@@ -26,15 +26,27 @@ prompt_callback() {
 }
 
 override_git_prompt_colors() {
+    local -r _color_pink="$(tput setaf 181)"
+    local -r _color_red="$(tput setaf 174)"
+
+    local -r _bold="$(tput bold)"
+
     local -r _color_blue="${_abz_beg}$(tput setaf 111)${_abz_end}"
     local -r _color_cyan="${_abz_beg}$(tput setaf 116)${_abz_end}"
     local -r _color_green="${_abz_beg}$(tput setaf 157)${_abz_end}"
-    local -r _color_pink="${_abz_beg}$(tput setaf 181)${_abz_end}"
-    local -r _color_red="${_abz_beg}$(tput setaf 174)${_abz_end}"
     local -r _color_yellow="${_abz_beg}$(tput setaf 187)${_abz_end}"
+    local -r _pink="${_abz_beg}${_color_pink}${_abz_end}"
+    local -r _pink_bold="${_abz_beg}${_bold}${_color_pink}${_abz_end}"
+    local -r _red="${_abz_beg}${_color_red}${_abz_end}"
+    local -r _red_bold="${_abz_beg}${_bold}${_color_red}${_abz_end}"
 
     local -r _user="\u"
-    local -r _host="\h"
+    local _host=''
+
+    # http://unix.stackexchange.com/a/9606
+    if [[ -n "${SSH_CLIENT}" || -n "$SSH_TTY" || -n "$SSH_CONNECTION" ]]; then
+        _host="${_pink_bold}@\h${_abz_reset}"
+    fi
 
     GIT_PROMPT_THEME_NAME="Pluc"          # Name of this theme
     GIT_PROMPT_ONLY_IN_REPO=0             # Always use git promp
@@ -45,10 +57,10 @@ override_git_prompt_colors() {
     GIT_PROMPT_IGNORE_STASH=1             # Dont show stash info
 
     GIT_PROMPT_COMMAND_OK="${_color_green}√" # When last command succeed
-    GIT_PROMPT_COMMAND_FAIL="${_color_red}✘" # When last command failed
-    GIT_PROMPT_START_USER="${_color_blue}${_user}${_color_yellow}@${_color_pink}${_host} "
+    GIT_PROMPT_COMMAND_FAIL="${_red}✘"       # When last command failed
+    GIT_PROMPT_START_USER="${_color_blue}${_user}${_abz_reset}${_host} "
     GIT_PROMPT_END_USER=" _LAST_COMMAND_INDICATOR_ ${_color_yellow}"
-    GIT_PROMPT_START_ROOT="${_color_red}${_user}${_color_yellow}@${_color_pink}${_host} "
+    GIT_PROMPT_START_ROOT="${_red_bold}${_user}${_abz_reset}${_host} "
     GIT_PROMPT_END_ROOT=${GIT_PROMPT_END_USER}
     GIT_PROMPT_PREFIX="("
     GIT_PROMPT_SUFFIX=")"
@@ -57,16 +69,16 @@ override_git_prompt_colors() {
     GIT_PROMPT_REMOTE=" "                  # Remote branch
     GIT_PROMPT_STAGED="${_color_green}●"   # Staged files
     GIT_PROMPT_CHANGED="${_abz_orange}◐"   # Modified files
-    GIT_PROMPT_CONFLICTS="${_color_red}◌"  # Conflicting files
+    GIT_PROMPT_CONFLICTS="${_red}◌"        # Conflicting files
     GIT_PROMPT_UNTRACKED="${_color_cyan}○" # Untracked files
     GIT_PROMPT_STASHED=""                  # Number of stashes
     GIT_PROMPT_CLEAN=""                    # When everything is clean
 
     ## Please do not add colors to these symbols
-    GIT_PROMPT_SYMBOLS_AHEAD="▲"             # Symbol for "n versions ahead of origin"
-    GIT_PROMPT_SYMBOLS_BEHIND="▼"            # Symbol for "n versions behind of origin"
-    GIT_PROMPT_SYMBOLS_PREHASH=""            # Symbol before hash if no name
-    GIT_PROMPT_SYMBOLS_NO_REMOTE_TRACKING="" # Symbol after the branch if not tracked
+    GIT_PROMPT_SYMBOLS_AHEAD="▲"              # Symbol for "n versions ahead of origin"
+    GIT_PROMPT_SYMBOLS_BEHIND="▼"             # Symbol for "n versions behind of origin"
+    GIT_PROMPT_SYMBOLS_PREHASH=""             # Symbol before hash if no name
+    GIT_PROMPT_SYMBOLS_NO_REMOTE_TRACKING=" " # Symbol after the branch if not tracked
 }
 
 reload_git_prompt_colors "Pluc"
