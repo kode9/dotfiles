@@ -7,10 +7,11 @@
 - clean: ['~']
 
 - shell:
-  -
-    command: git submodule --quiet update --init --recursive
-    description: Checking submodules
-    stderr: true
+    -
+      command: git submodule --quiet update --init --recursive
+      description: Checking submodules
+      stderr: true
+    - [mkdir -p ~/usr/aur/build ~/usr/aur/packages ~/usr/aur/src ~/usr/aur/logs, Creating directories]
 
 - link:
     ~/.dotfiles: ''
@@ -23,6 +24,4 @@
     ~/.bash_profile: shell/bash/bash_profile
     ~/.bashrc: shell/bash/bashrc
     ~/.makepkg.conf: arch/makepkg.conf
-
-- shell:
-    - [mkdir -p ~/usr/aur/build ~/usr/aur/packages ~/usr/aur/logs, Create directories]
+    ~/.yaourtrc: arch/yaourtrc

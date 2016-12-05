@@ -1,0 +1,60 @@
+#
+# ~/.yaourtrc - Configuration for yaourt
+#
+# See yaourtrc(5) for more information.
+
+# GENERAL
+
+## Backup .pacnew files to use with yaourt -C
+AUTOSAVEBACKUPFILE=1
+## Specify directory where to keep sources for devel packages.
+DEVELSRCDIR="${HOME}/usr/aur/src"
+## Always search for new version of development (CVS/SVN/Git/Mercurial/other
+## VCS) packages when upgrading
+DEVEL=1
+
+# Environment variables
+## Define the editor to use for PKGBUILD editing
+VISUAL="emacsclient"
+
+# AUR
+
+## Show a diff of the PKGBUILD for packages updated from AUR
+AURSHOWDIFF=1
+## always search for new version of packages installed from AUR Unsupported when
+## upgrading
+AURUPGRADE=1
+## Clone the AUR git repository instead of using snapshot tarballs
+AURUSEGIT=1
+
+# ABS
+
+USE_GIT=1
+
+# BUILD
+
+## Export built package to $EXPORTDIR or, if not defined to $PKGDEST
+EXPORT=1
+## Export sources to $EXPORTDIR or, if not defined to $SRCPKGDEST or $PKGDEST
+EXPORTSRC=1
+
+# OUTPUT
+
+## Enable colors disabled if output is a tty
+USECOLOR=1
+## Enable pager (uses $PAGER)
+USEPAGER=1
+## Show packages not found on aur / version mismatch / and those marked as out
+## of date
+DETAILUPGRADE=4
+# If 0, search for orphans.
+SHOWORPHANS=0
+
+# COMMAND
+
+## Define the diff editor to use ($DIFFEDITCMD file1 file2).
+DIFFEDITCMD="emacsclient -nw --eval \"(ediff-files \"${1}\" \"${2}\")\""
+
+# pacdiffviewer
+P_LOCATE=1         # Use locate instead of find
+DIFFPROG="emacsclient -nw --eval \"(ediff-files \"${1}\" \"${2}\")\""
