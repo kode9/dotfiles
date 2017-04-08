@@ -12,6 +12,7 @@
       description: Checking submodules
       stderr: true
     - [mkdir -p ~/usr/aur/build ~/usr/aur/packages ~/usr/aur/src ~/usr/aur/logs, Creating directories]
+    - [mkdir -p -m 700 ~/.gnupg && chmod 700 ~/.gnupg, Checking GPG directory]
 
 - link:
     ~/.dotfiles: ''
@@ -25,3 +26,5 @@
     ~/.bashrc: shell/bash/bashrc
     ~/.makepkg.conf: arch/makepkg.conf
     ~/.yaourtrc: arch/yaourtrc
+    ~/.gnupg/gpg.conf: gpg/gpg.conf
+    ~/.gnupg/dirmngr.conf: gpg/dirmngr.conf
