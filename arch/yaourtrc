@@ -41,7 +41,7 @@ EXPORTSRC=1
 # OUTPUT
 
 ## Enable colors disabled if output is a tty
-USECOLOR=1
+USECOLOR=2
 ## Enable pager (uses $PAGER)
 USEPAGER=1
 ## Show packages not found on aur / version mismatch / and those marked as out
