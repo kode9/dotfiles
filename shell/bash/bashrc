@@ -47,11 +47,16 @@ fi
 ### - cmdhist   : try to save multi-line command in a single history entry;
 ### - lithist   : (with cmdhist) Use newlines instead of semicolon separators
 shopt -s histappend cmdhist lithist
-## The number of commands to remember in the command history. Negative is no
-## limit
-export HISTSIZE=-1
-## The number of commands to keep in tge history file. Negative is no limit
-export HISTFILESIZE=-1
+## Number of commands to keep in the history and in the history file. Since bash
+## 4.3 a negative value means unlimited. An empty value has the same effect on
+## older versions.
+if [ "${BASH_VERSINFO[0]}${BASH_VERSINFO[1]}" -gt 42 ]; then
+    export HISTSIZE=-1
+    export HISTFILESIZE=-1
+else
+    export HISTSIZE=
+    export HISTFILESIZE=
+fi
 ## A colon-separated list of values controlling how commands are saved on the
 ## history list (ignorespace, ignoredups, ignoreboth, erasedups)
 export HISTCONTROL=erasedups
