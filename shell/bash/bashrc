@@ -83,3 +83,8 @@ unset -v _git_prompt_file
 
 # Source alias definitions
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+
+# Local ruby gems
+if which ruby >/dev/null && which gem >/dev/null; then
+    PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
