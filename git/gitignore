@@ -16,7 +16,6 @@ ehthumbs.db
 # Compiled sources
 *.a
 *.class
-*.com
 *.dll
 *.exe
 *.o
