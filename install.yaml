@@ -12,7 +12,8 @@
       description: Checking submodules
       stderr: true
     - [mkdir -p ~/usr/aur/build ~/usr/aur/packages ~/usr/aur/src ~/usr/aur/logs, Creating directories]
-    - [mkdir -p -m 700 ~/.gnupg && chmod 700 ~/.gnupg, Checking GPG directory]
+    - [mkdir -vp -m 700 ~/.gnupg && chmod -c 700 ~/.gnupg, Checking GPG directory]
+    - [mkdir -vp -m 700 ~/.ssh && chmod -c 700 ~/.ssh, Checking SSH directory]
 
 - link:
     ~/.dotfiles: ''
