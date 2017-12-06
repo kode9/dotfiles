@@ -1,5 +1,7 @@
-# Git configuration file
-# Pierre-Luc Perrier <pluc-dev@the-pluc.net>
+#
+# ~/.gitconfig
+# Git global configuration
+# Pierre-Luc Perrier <dev@the-pluc.net>
 #
 # Credits:
 #   https://git.wiki.kernel.org/index.php/Aliases
@@ -7,54 +9,54 @@
 #
 
 [user]
-	name = Pierre-Luc Perrier
-	email = pluc-dev@the-pluc.net
+  name = Pierre-Luc Perrier
+  email = dev@the-pluc.net
 
 [branch]
-	autosetuprebase = remote
+  autosetuprebase = remote
 
 [branch "master"]
-	merge = refs/heads/master
-	remote = origin
+  merge = refs/heads/master
+  remote = origin
 
 [core]
-	askpass = git-gui--askpass
-	editor = emacsclient
-	preloadindex = true
+  askpass = git-gui--askpass
+  editor = emacsclient
+  preloadindex = true
   abbrev = 10
   pager = less -FRSX
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 
 [color]
-	ui = auto
+  ui = auto
 
 [diff]
-	renamelimit = 0
-	algorithm = histogram
+  renamelimit = 0
+  algorithm = histogram
 
 [log]
-	decorate=full
+  decorate=full
 
 [merge]
-	conflictstyle = diff3
-	ff = true
-	log = 10
-	verbosity = 1
+  conflictstyle = diff3
+  ff = true
+  log = 10
+  verbosity = 1
 
 [pull]
-	rebase = preserve
+  rebase = preserve
 
 [push]
-	default = simple
+  default = simple
 
 [rerere]
-	enabled = true
+  enabled = true
 
 [svn]
-	rmdir = 1
+  rmdir = 1
 
 [webui]
-	autoupdate = true
+  autoupdate = true
 
 # Aliases (tries to follow magit conventions as I mainly use magit as git client).
 [alias]
@@ -108,11 +110,12 @@
   l = log --graph --topo-order --pretty=format:'%C(yellow)%h%Creset -%C(bold yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   ll = log --graph --topo-order --stat
   who = shortlog --summary --numbered
-	# Find someone and display full name / email address
-	whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+  # Find someone and display full name / email address
+  whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
 
-	# Serve repo on the spot
-	serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
+  # Serve repo on the spot
+  serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
   webui = !/home/pluc/.git-webui/release/libexec/git-core/git-webui
+
 [pass]
-	signcommits = true
+  signcommits = true
