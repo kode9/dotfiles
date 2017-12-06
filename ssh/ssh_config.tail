@@ -1,0 +1,29 @@
+# For all hosts
+Host *
+  # CVE-2016-0777, CVE-2016-0778 (undocumented)
+  UseRoaming no
+  # Hash host names and addresses when they are added to ~/.ssh/known_hosts
+  HashKnownHosts yes
+  # Key exchange
+  KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
+  # Authentication
+  PasswordAuthentication no
+  ChallengeResponseAuthentication no
+  PubkeyAuthentication yes
+  HostKeyAlgorithms ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ssh-ed25519,ssh-rsa
+  # Symmetric ciphers
+  Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
+  # Message authentication codes
+  MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,umac-128@openssh.com
+  # Share multiple sessions
+  ControlMaster auto
+  # Path to socket for session sharing
+  ControlPath ~/.ssh/%C.s
+  # Keep the socket open for that much time
+  ControlPersist 30m
+  # Send a keep-alive message every N seconds
+  ServerAliveInterval 300
+  # Don't use compression
+  Compression no
+  # IPv4 only
+  AddressFamily inet
