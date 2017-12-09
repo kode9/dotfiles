@@ -28,6 +28,7 @@
     ~/.gnupg/gpg-agent.conf: gpg/gpg-agent.conf
     ~/.gnupg/gpg.conf: gpg/gpg.conf
     ~/.makepkg.conf: arch/makepkg.conf
+    ~/.pam_environment: X11/pam_environment
     ~/.xinitrc: X11/xinitrc
     ~/.xserverrc: X11/xserverrc
     ~/.yaourtrc: arch/yaourtrc
