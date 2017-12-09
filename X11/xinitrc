@@ -1,5 +1,21 @@
 #!/usr/bin/env sh
 
+# ~/.xinitrc
+#
+# Called by xinit/startx to start the X client.
+#
+# A list of sessions can be found in /usr/share/xsessions/
+
+_xresources="${HOME}/.Xresources"
+if [ -f "${_xresources}" ]; then
+    xrdb -merge "${_xresources}"
+fi
+
+_xmodmap="${HOME}/.Xmodmap"
+if [ -f "${_xmodmap}" ]; then
+    xrdb -merge "${_xmodmap}"
+fi
+
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
         [ -x "$f" ] && . "$f"
@@ -7,7 +23,13 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     unset f
 fi
 
-xresources=${HOME}/.Xresources
-[[ -f "${xresources}" ]] && xrdb -merge "${xresources}"
+_default_session=mate
+_session=${1:-${_default_session}}
 
-exec mate-session
+case $_session in
+    mate|mate-session ) exec mate-session;;
+    i3|i3wm           ) exec i3;;
+    kde               ) exec startkde;;
+    xfce|xfce4        ) exec startxfce4;;
+    *                 ) exec $1;; # No known session, try to run it as command
+esac
