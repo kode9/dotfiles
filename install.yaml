@@ -28,4 +28,5 @@
     ~/.gnupg/gpg.conf: gpg/gpg.conf
     ~/.makepkg.conf: arch/makepkg.conf
     ~/.xinitrc: X11/xinitrc
+    ~/.xserverrc: X11/xserverrc
     ~/.yaourtrc: arch/yaourtrc

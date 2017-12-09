@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+# ~/.xserverrc
+#
+# Called by xinit/startx to start the X server.
+
+exec /usr/bin/X -nolisten tcp "$@" vt$XDG_VTNR
