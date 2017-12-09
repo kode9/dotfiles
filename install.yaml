@@ -25,6 +25,7 @@
     ~/.dotfiles: ''
     ~/.gitconfig: git/gitconfig
     ~/.gnupg/dirmngr.conf: gpg/dirmngr.conf
+    ~/.gnupg/gpg-agent.conf: gpg/gpg-agent.conf
     ~/.gnupg/gpg.conf: gpg/gpg.conf
     ~/.makepkg.conf: arch/makepkg.conf
     ~/.xinitrc: X11/xinitrc
