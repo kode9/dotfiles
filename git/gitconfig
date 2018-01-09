@@ -11,6 +11,7 @@
 [user]
   name = Pierre-Luc Perrier
   email = dev@the-pluc.net
+  signingkey = 0xBB3504574B74E1B9
 
 [branch]
   autosetuprebase = remote
