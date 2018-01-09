@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=EmacsNoWait
+Exec=emacsclient -n %F
+MimeType=text/x-log;
+Terminal=false
+NoDisplay=true
+Comment=Emacsclient without waiting
+Comment[fr_FR]=Emacsclient sans attente
+GenericName=Emacsclient without waiting

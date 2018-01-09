@@ -21,6 +21,9 @@
         rustup completions zsh > ~/.zfunc/_rustup
       description: Rustup completion
       stderr: true
+    -
+      command: mkdir -vp ~/.local/share && chmod -c 700 ~/.local/share
+      description: Check XDG_DATA_HOME
 
 - link:
     ~/.Xresources: X11/Xresources
@@ -34,6 +37,7 @@
     ~/.gnupg/dirmngr.conf: gpg/dirmngr.conf
     ~/.gnupg/gpg-agent.conf: gpg/gpg-agent.conf
     ~/.gnupg/gpg.conf: gpg/gpg.conf
+    ~/.local/share/applications/emacsclient-n.desktop: xdg/emacsclient-n.desktop
     ~/.makepkg.conf: arch/makepkg.conf
     ~/.pam_environment: X11/pam_environment
     ~/.xinitrc: X11/xinitrc
