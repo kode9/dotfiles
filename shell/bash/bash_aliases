@@ -7,3 +7,4 @@
 alias ls='ls --color=auto'
 alias la='ls -lah'
 alias ll='ls -lAh'
+alias https='http --default-scheme=https'
