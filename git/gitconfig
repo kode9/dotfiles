@@ -122,7 +122,7 @@
   signcommits = true
 
 [gpg]
-	program = /usr/bin/gpg2
+  program = /usr/bin/gpg2
 
 [http "https://gopkg.in"]
-	followRedirects = true
+  followRedirects = true
