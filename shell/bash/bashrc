@@ -17,7 +17,12 @@ elif [ -f /etc/bash.bashrc ]; then
 fi
 
 # PATH
-_abz_paths=($HOME/usr/bin $HOME/.linuxbrew/bin $HOME/.linuxbrew/opt/python/libexec/bin $HOME/ruby/gems/bin)
+_abz_paths=($HOME/usr/bin \
+                $HOME/.linuxbrew/bin \
+                $HOME/.linuxbrew/opt/python/libexec/bin \
+                $HOME/ruby/gems/bin \
+                $HOME/.composer/vendor/bin \
+                $HOME/.cargo/bin)
 for _path in ${_abz_paths[@]} ; do
     # http://unix.stackexchange.com/a/217626
     [[ -d "${_path}" && ":${PATH}:" != *":${_path}:"* ]] && PATH="${_path}:${PATH}"
