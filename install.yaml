@@ -14,6 +14,13 @@
     - [mkdir -p ~/usr/aur/build ~/usr/aur/packages ~/usr/aur/src ~/usr/aur/logs, Creating directories]
     - [mkdir -vp -m 700 ~/.gnupg && chmod -c 700 ~/.gnupg, Checking GPG directory]
     - [mkdir -vp -m 700 ~/.ssh && chmod -c 700 ~/.ssh, Checking SSH directory]
+    -
+      command: >-
+        [[ -x $(which rustup) ]] &&
+        mkdir -p ~/.zfunc &&
+        rustup completions zsh > ~/.zfunc/_rustup
+      description: Rustup completion
+      stderr: true
 
 - link:
     ~/.Xresources: X11/Xresources
