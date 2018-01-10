@@ -40,6 +40,7 @@
     ~/.local/share/applications/emacsclient-n.desktop: xdg/emacsclient-n.desktop
     ~/.makepkg.conf: arch/makepkg.conf
     ~/.pam_environment: X11/pam_environment
+    ~/.tmux.conf: shell/tmux.conf
     ~/.xinitrc: X11/xinitrc
     ~/.xserverrc: X11/xserverrc
     ~/.yaourtrc: arch/yaourtrc
