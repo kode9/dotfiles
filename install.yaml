@@ -4,7 +4,7 @@
       create: true
       force: false
 
-- clean: ['~']
+- clean: ['~', '~/.gnupg', '~/.config/git', '~/.local/share/applications']
 
 - shell:
     -
