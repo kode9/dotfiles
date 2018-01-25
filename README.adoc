@@ -1,0 +1,48 @@
+= Dotfiles
+Pierre-Luc Perrier <dev@the-pluc.net>
+:description: Pluc's dotfiles
+:keywords: dotfiles,linux,shell
+:nofooter:
+:icons: font
+:sectanchors:
+:hide-uri-scheme:
+:linkattrs:
+:source-highlighter: prettify
+:experimental:
+
+== Key bindings
+
+=== tmux
+
+[cols=">1,1,2m,3"]
+|===
+|Prefix |Key |Command |Description
+
+|kbd:[C-b] |kbd:[/] |command-promp |Open the tmux internal command prompt
+
+|kbd:[C-b] |kbd:["] |split-window -h |Split window horizontally
+
+|kbd:[C-b] |kbd:[é] |split-window -v |Split window vertically
+
+|kbd:[C-b] |kbd:[a] |last-window |Switch to last window
+
+|kbd:[C-b] |kbd:[l] |choose-tree |List windows as a tree
+
+|kbd:[C-b] |kbd:[L] |find-window |Search window
+
+|kbd:[C-b] |kbd:[K] |kill-window |Kill window
+
+|kbd:[C-b] |kbd:[q] |last-pane |Switch to the previously active pane
+
+|kbd:[C-b] |kbd:[f] |resize-pane -Z |Zoom / unzoom pane
+
+|kbd:[C-b] |kbd:[k] |kill-pane |Kill pane
+
+|kbd:[C-b] |kbd:[Q] |display-panes |Show panes numbers
+
+|kbd:[C-b] |kbd:[:] |copy-mode |Enter copy mode
+
+|kbd:[C-b] |kbd:[!] |paste-buffer|Paste copy buffer into current pane
+
+|kbd:[C-b] |kbd:[R] |source-file |Reload configuration
+|===
