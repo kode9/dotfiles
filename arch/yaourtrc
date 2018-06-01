@@ -47,5 +47,7 @@ DETAILUPGRADE=4
 SHOWORPHANS=0
 
 # COMMAND
+## Specify the pacman binary to use with yaourt
+PACMAN="powerpill"
 ## Define the diff editor to use ($DIFFEDITCMD file1 file2).
 DIFFEDITCMD="ediff"
