@@ -1,0 +1,63 @@
+{
+    "aria2": {
+        "args": [
+            "--allow-overwrite=true",
+            "--always-resume=false",
+            "--auto-file-renaming=false",
+            "--check-integrity=true",
+            "--conditional-get=true",
+            "--continue=true",
+            "--file-allocation=none",
+            "--log-level=error",
+            "--max-concurrent-downloads=100",
+            "--max-connection-per-server=5",
+            "--min-split-size=5M",
+            "--remote-time=true",
+            "--show-console-readout=true"
+        ],
+        "path": "/usr/bin/aria2c"
+    },
+    "pacman": {
+        "config": "/etc/pacman.conf",
+        "path": "/usr/bin/pacman"
+    },
+    "pacserve": {
+        "server": null
+    },
+    "powerpill": {
+        "select": true,
+        "reflect databases": true
+    },
+    "reflector": {
+        "args": [
+            "--protocol",
+            "https",
+            "--latest",
+            "16",
+            "--sort",
+            "rate",
+            "--threads",
+            "4",
+            "--fastest",
+            "8"
+        ]
+    },
+    "rsync": {
+        "args": [
+            "--no-motd",
+            "--progress"
+        ],
+        "db only": true,
+        "path": "/usr/bin/rsync",
+        "servers": [
+            "rsync://mirror.f4st.host/archlinux/$repo/os/$arch",
+            "rsync://mirror.pseudoform.org/packages/$repo/os/$arch",
+            "rsync://mirror.orbit-os.com/archlinux/$repo/os/$arch",
+            "rsync://mirrors.atviras.lt/archlinux/$repo/os/$arch",
+            "rsync://ftp.halifax.rwth-aachen.de/archlinux/$repo/os/$arch",
+            "rsync://mirror.neuf.no/archlinux/$repo/os/$arch",
+            "rsync://rsync.osbeck.com/archlinux/$repo/os/$arch",
+            "rsync://ftp.sh.cvut.cz/arch/$repo/os/$arch"
+        ]
+    }
+}
