@@ -11,7 +11,7 @@
       command: git submodule --quiet update --init --recursive
       description: Checking submodules
       stderr: true
-    - [mkdir -p ~/usr/aur/build ~/usr/aur/packages ~/usr/aur/src ~/usr/aur/logs, Creating directories]
+    - [mkdir -p ~/usr/aur/build ~/usr/aur/packages ~/usr/aur/src ~/usr/aur/srcpackages ~/usr/aur/logs, Creating directories]
     - [mkdir -vp -m 700 ~/.gnupg && chmod -c 700 ~/.gnupg, Checking GPG directory]
     - [mkdir -vp -m 700 ~/.ssh && chmod -c 700 ~/.ssh, Checking SSH directory]
     -
@@ -32,13 +32,13 @@
     ~/.bash_profile: shell/bash/bash_profile
     ~/.bashrc: shell/bash/bashrc
     ~/.config/git/ignore: git/gitignore
+    ~/.config/makepkg.conf: arch/makepkg.conf
     ~/.dotfiles: ''
     ~/.gitconfig: git/gitconfig
     ~/.gnupg/dirmngr.conf: gpg/dirmngr.conf
     ~/.gnupg/gpg-agent.conf: gpg/gpg-agent.conf
     ~/.gnupg/gpg.conf: gpg/gpg.conf
     ~/.local/share/applications/emacsclient-n.desktop: xdg/emacsclient-n.desktop
-    ~/.makepkg.conf: arch/makepkg.conf
     ~/.pam_environment: X11/pam_environment
     ~/.tmux.conf: shell/tmux.conf
     ~/.xinitrc: X11/xinitrc
