@@ -11,18 +11,18 @@
       command: git submodule --quiet update --init --recursive
       description: Checking submodules
       stderr: true
-    - [mkdir -p ~/usr/aur/build ~/usr/aur/packages ~/usr/aur/src ~/usr/aur/srcpackages ~/usr/aur/logs, Creating directories]
-    - [mkdir -vp -m 700 ~/.gnupg && chmod -c 700 ~/.gnupg, Checking GPG directory]
-    - [mkdir -vp -m 700 ~/.ssh && chmod -c 700 ~/.ssh, Checking SSH directory]
+    - [sh -c 'mkdir -p ~/usr/aur/build ~/usr/aur/packages ~/usr/aur/src ~/usr/aur/srcpackages ~/usr/aur/logs', Creating directories]
+    - [sh -c 'mkdir -vp -m 700 ~/.gnupg && chmod -c 700 ~/.gnupg', Checking GPG directory]
+    - [sh -c 'mkdir -vp -m 700 ~/.ssh && chmod -c 700 ~/.ssh', Checking SSH directory]
     -
       command: >-
-        [[ -x $(which rustup) ]] &&
+        sh -c '[[ -x $(which rustup) ]] &&
         mkdir -p ~/.zfunc &&
-        rustup completions zsh > ~/.zfunc/_rustup
+        rustup completions zsh > ~/.zfunc/_rustup'
       description: Rustup completion
       stderr: true
     -
-      command: mkdir -vp ~/.local/share && chmod -c 700 ~/.local/share
+      command: sh -c 'mkdir -vp ~/.local/share && chmod -c 700 ~/.local/share'
       description: Check XDG_DATA_HOME
 
 - link:
