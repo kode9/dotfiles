@@ -1,5 +1,5 @@
-#
 # ~/.gitconfig
+#
 # Git global configuration
 # Pierre-Luc Perrier <dev@the-pluc.net>
 #
@@ -15,10 +15,6 @@
 
 [branch]
   autosetuprebase = remote
-
-[branch "master"]
-  merge = refs/heads/master
-  remote = origin
 
 [core]
   askpass = git-gui--askpass
