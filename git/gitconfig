@@ -110,10 +110,6 @@
   # Find someone and display full name / email address
   whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
 
-  # Serve repo on the spot
-  serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
-  webui = !/home/pluc/.git-webui/release/libexec/git-core/git-webui
-
 [pass]
   signcommits = true
 
