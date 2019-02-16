@@ -10,6 +10,12 @@ Pierre-Luc Perrier <dev@the-pluc.net>
 :source-highlighter: prettify
 :experimental:
 
+== Dependencies
+
+* exa
+* xsel
+* tmux
+
 == Key bindings
 
 === tmux
