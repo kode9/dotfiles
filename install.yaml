@@ -16,7 +16,7 @@
     - [sh -c 'mkdir -vp -m 700 ~/.ssh && chmod -c 700 ~/.ssh', Checking SSH directory]
     -
       command: >-
-        sh -c '[[ -x $(which rustup) ]] &&
+        sh -c 'test -x "$(which rustup)" &&
         mkdir -p ~/.zfunc &&
         rustup completions zsh > ~/.zfunc/_rustup'
       description: Rustup completion
