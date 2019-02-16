@@ -33,6 +33,7 @@
 
 [log]
   decorate=full
+	date = iso8601
 
 [merge]
   conflictstyle = diff3
