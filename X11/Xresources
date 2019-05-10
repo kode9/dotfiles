@@ -1,16 +1,16 @@
 #define THEME_ZENBURN
 
-#define FONT_REGULAR xft:Monoid:style=Regular:pixelsize=11
-#define FONT_BOLD xft:Monoid:style=Bold:pixelsize=11
-#define FONT_ITALIC xft:Monoid:style=Italic:pixelsize=11
-#define FONT_BOLD_ITALIC xft:Monoid:style=Bold Italic:pixelsize=11
-
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintnone
 Xft.hinting: 0
 Xft.antialias: 1
 Xft.rgba: rgb
+
+#define FONT_REGULAR xft:Iosevka:style=Regular:size=11
+#define FONT_BOLD xft:Iosevka:style=Bold:size=11
+#define FONT_ITALIC xft:Iosevka:style=Italic:size=11
+#define FONT_BOLD_ITALIC xft:Iosevka:style=Bold Italic:size=11
 
 !!!!!!!!!!!!!!!!
 ! rxvt-unicode !
