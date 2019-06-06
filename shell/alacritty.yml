@@ -298,7 +298,7 @@ background_opacity: 1.0
 # section.
 mouse_bindings:
   - { mods: Shift, mouse: Right, action: Copy }
-  - { mods: Command, mouse: Right, action: Paste }
+  - { mods: Control, mouse: Right, action: Paste }
   - { mouse: Middle, action: PasteSelection }
 
 mouse:
