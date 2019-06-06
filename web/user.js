@@ -224,7 +224,7 @@ user_pref("browser.search.geoSpecificDefaults",			false);
 
 // PREF: Do not automatically send selection to clipboard on some Linux platforms
 // http://kb.mozillazine.org/Clipboard.autocopy
-user_pref("clipboard.autocopy",					false);
+user_pref("clipboard.autocopy",					true);
 
 // PREF: Prevent leaking application locale/date format using JavaScript
 // https://bugzilla.mozilla.org/show_bug.cgi?id=867501
