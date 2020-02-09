@@ -353,8 +353,8 @@ mouse_bindings:
 # a no-op if you do not wish to receive input characters for that binding.
 key_bindings:
   - { mods: Control, key: Numpad0, action: ResetFontSize }
-  - { key: PageUp, action: ScrollPageUp }
-  - { key: PageDown, action: ScrollPageDown }
   - { mods: Shift, key: PageUp, action: ScrollLineUp }
   - { mods: Shift, key: PageDown, action: ScrollLineDown }
+  - { mods: Control, key: PageUp, action: ScrollPageUp }
+  - { mods: Control, key: PageDown, action: ScrollPageDown }
   - { mods: Control, key: F, action: ToggleFullscreen }
