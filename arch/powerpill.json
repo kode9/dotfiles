@@ -4,21 +4,29 @@
             "--allow-overwrite=true",
             "--always-resume=false",
             "--auto-file-renaming=false",
-            "--check-integrity=true",
+            "--auto-file-renaming=false",
+            "--check-integrity=false",
             "--conditional-get=true",
-            "--console-log-level=warn",
+            "--connect-timeout=30",
+            "--console-log-level=error",
             "--continue=true",
-            "--file-allocation=none",
+            "--disable-ipv6=true",
+            "--download-result=full",
+            "--enable-mmap=true",
+            "--file-allocation=falloc",
             "--http-no-cache=true",
             "--keep-unfinished-download-result=false",
             "--log-level=warn",
-            "--max-concurrent-downloads=128",
+            "--max-concurrent-downloads=64",
             "--max-connection-per-server=4",
-            "--min-split-size=8M",
+            "--max-file-not-found=2",
+            "--max-tries=3",
+            "--min-split-size=4M",
             "--no-conf=true",
             "--optimize-concurrent-downloads=true",
             "--remote-time=true",
             "--show-console-readout=true",
+            "--split=4",
             "--summary-interval=0"
         ],
         "path": "/usr/bin/aria2c"
@@ -50,20 +58,21 @@
     },
     "rsync": {
         "args": [
+            "--checksum",
             "--no-motd",
             "--progress"
         ],
         "db only": true,
         "path": "/usr/bin/rsync",
         "servers": [
-            "rsync://archlinux.beccacervello.it/archlinux/$repo/os/$arch",
-            "rsync://ger.mirror.pkgbuild.com/packages/$repo/os/$arch",
             "rsync://archlinux.uk.mirror.allworldit.com/archlinux/$repo/os/$arch",
-            "rsync://rsync.osbeck.com/archlinux/$repo/os/$arch",
-            "rsync://archlinux.polymorf.fr/archlinux/$repo/os/$arch",
+            "rsync://mirror.orbit-os.com/archlinux/$repo/os/$arch",
             "rsync://mirror.pseudoform.org/packages/$repo/os/$arch",
-            "rsync://rsync.myrveln.se/pub/linux/archlinux/$repo/os/$arch",
-            "rsync://arch.mirror.constant.com/archlinux/$repo/os/$arch"
+            "rsync://mirror.f4st.host/archlinux/$repo/os/$arch",
+            "rsync://ftp.sh.cvut.cz/arch/$repo/os/$arch",
+            "rsync://mirror.chaoticum.net/arch/$repo/os/$arch",
+            "rsync://mirrors.atviras.lt/archlinux/$repo/os/$arch",
+            "rsync://ftp.halifax.rwth-aachen.de/archlinux/$repo/os/$arch"
         ]
     }
 }
