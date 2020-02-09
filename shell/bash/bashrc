@@ -34,6 +34,9 @@ if which ruby >/dev/null && which gem >/dev/null; then
   PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
 
+# Custom environment variables
+export CPM_SOURCE_CACHE=${XDG_CACHE_HOME}/CPM
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
