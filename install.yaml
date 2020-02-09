@@ -33,7 +33,7 @@
     ~/.bashrc: shell/bash/bashrc
     ~/.config/alacritty/alacritty.yml: shell/alacritty.yml
     ~/.config/git/ignore: git/gitignore
-    ~/.config/makepkg.conf: arch/makepkg.conf
+    ~/.config/pacman/makepkg.conf: arch/makepkg.conf
     ~/.config/yay/config.json: arch/yay.json
     ~/.dotfiles: ''
     ~/.gitconfig: git/gitconfig
