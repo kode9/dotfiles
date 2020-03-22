@@ -19,7 +19,7 @@ user_pref("dom.serviceWorkers.enabled",				false);
 
 // PREF: Disable web notifications
 // https://support.mozilla.org/en-US/questions/1140439
-user_pref("dom.webnotifications.enabled",			false);
+user_pref("dom.webnotifications.enabled",			true);
 
 // PREF: Disable DOM timing API
 // https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI
@@ -224,7 +224,7 @@ user_pref("browser.search.geoSpecificDefaults",			false);
 
 // PREF: Do not automatically send selection to clipboard on some Linux platforms
 // http://kb.mozillazine.org/Clipboard.autocopy
-user_pref("clipboard.autocopy",					true);
+user_pref("clipboard.autocopy",					false);
 
 // PREF: Prevent leaking application locale/date format using JavaScript
 // https://bugzilla.mozilla.org/show_bug.cgi?id=867501
@@ -427,7 +427,7 @@ user_pref("services.blocklist.update_enabled",			true);
 
 // PREF: Decrease system information leakage to Mozilla blocklist update servers
 // https://trac.torproject.org/projects/tor/ticket/16931
-user_pref("extensions.blocklist.url", "https://blocklists.settings.services.mozilla.com/v1/blocklist/3/%APP_ID%/%APP_VERSION%/");
+user_pref("extensions.blocklist.url",				"https://blocklist.addons.mozilla.org/blocklist/3/%APP_ID%/%APP_VERSION%/");
 
 // PREF: Disable system add-on updates (hidden & always-enabled add-ons from Mozilla)
 // https://firefox-source-docs.mozilla.org/toolkit/mozapps/extensions/addon-manager/SystemAddons.html
@@ -445,9 +445,10 @@ user_pref("extensions.systemAddon.update.enabled",		false);
 // https://support.mozilla.org/en-US/kb/extension-recommendations
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr",	false);
 
-// PREF: Trusted Recursive Resolver (DNS-over-HTTPS) (disabled)
+// PREF: Trusted Recursive Resolver (DNS-over-HTTPS)
 // https://wiki.mozilla.org/Trusted_Recursive_Resolver
-//user_pref("network.trr.mode",					0);
+user_pref("network.trr.mode",					5); // TODO Disabled for now
+user_pref("network.trr.uri", "https://mozilla.cloudflare-dns.com/dns-query");
 
 // PREF: Disable WebIDE
 // https://trac.torproject.org/projects/tor/ticket/16222
@@ -528,6 +529,7 @@ user_pref("privacy.userContext.enabled",			true);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1333933
 // https://wiki.mozilla.org/Security/Fingerprinting
 // NOTICE: RFP breaks some keyboard shortcuts used in certain websites (see #443)
+// NOTICE: RFP changes your time zone
 user_pref("privacy.resistFingerprinting",			true);
 
 // PREF: Disable the built-in PDF viewer
@@ -771,10 +773,11 @@ user_pref("privacy.clearOnShutdown.cache",			true);
 user_pref("privacy.clearOnShutdown.cookies",			true);
 user_pref("privacy.clearOnShutdown.downloads",			true);
 user_pref("privacy.clearOnShutdown.formdata",			true);
-user_pref("privacy.clearOnShutdown.history",			true);
+user_pref("privacy.clearOnShutdown.history",			false);
 user_pref("privacy.clearOnShutdown.offlineApps",		true);
-user_pref("privacy.clearOnShutdown.sessions",			true);
-user_pref("privacy.clearOnShutdown.openWindows",		true);
+user_pref("privacy.clearOnShutdown.passwords",			true);
+user_pref("privacy.clearOnShutdown.sessions",			false);
+user_pref("privacy.clearOnShutdown.openWindows",		false);
 
 // PREF: Set time range to "Everything" as default in "Clear Recent History"
 user_pref("privacy.sanitize.timeSpan",				0);
@@ -903,6 +906,11 @@ user_pref("browser.download.useDownloadDir",			false);
 // https://support.mozilla.org/en-US/kb/new-tab-page-show-hide-and-customize-top-sites#w_how-do-i-turn-the-new-tab-page-off
 user_pref("browser.newtabpage.enabled",				false);
 user_pref("browser.newtab.url",					"about:blank");
+
+// PREF: Disable Snippets
+// https://wiki.mozilla.org/Firefox/Projects/Firefox_Start/Snippet_Service
+// https://support.mozilla.org/en-US/kb/snippets-firefox-faq
+user_pref("browser.newtabpage.activity-stream.feeds.snippets",	false);
 
 // PREF: Disable Activity Stream
 // https://wiki.mozilla.org/Firefox/Activity_Stream
@@ -1331,6 +1339,7 @@ user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.enabled",
 user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.feeds.section.highlights", true);
 user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.feeds.section.topstories", true);
 user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.feeds.snippets", true);
+user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.feeds.snippets", true);
 user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.feeds.topsites", true);
 user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.prerender", true);
 user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.section.highlights.includeBookmarks", true);
@@ -1500,6 +1509,8 @@ user_pref("services.sync.prefs.sync.network.protocol-handler.external.moz-extens
 user_pref("services.sync.prefs.sync.network.protocol-handler.warn-external-default", true);
 user_pref("services.sync.prefs.sync.network.proxy.socks_remote_dns", true);
 user_pref("services.sync.prefs.sync.network.stricttransportsecurity.preloadlist", true);
+user_pref("services.sync.prefs.sync.network.trr.mode", true);
+user_pref("services.sync.prefs.sync.network.trr.uri", true);
 user_pref("services.sync.prefs.sync.pdfjs.disabled", true);
 user_pref("services.sync.prefs.sync.permissions.default.geo", true);
 user_pref("services.sync.prefs.sync.places.history.enabled", true);
@@ -1518,6 +1529,7 @@ user_pref("services.sync.prefs.sync.privacy.clearOnShutdown.formdata", true);
 user_pref("services.sync.prefs.sync.privacy.clearOnShutdown.history", true);
 user_pref("services.sync.prefs.sync.privacy.clearOnShutdown.offlineApps", true);
 user_pref("services.sync.prefs.sync.privacy.clearOnShutdown.openWindows", true);
+user_pref("services.sync.prefs.sync.privacy.clearOnShutdown.passwords", true);
 user_pref("services.sync.prefs.sync.privacy.clearOnShutdown.sessions", true);
 user_pref("services.sync.prefs.sync.privacy.cpd.cache", true);
 user_pref("services.sync.prefs.sync.privacy.cpd.cookies", true);
