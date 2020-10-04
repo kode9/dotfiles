@@ -45,7 +45,7 @@
     "reflector": {
         "args": [
             "--protocol",
-            "https",
+            "http",
             "--latest",
             "16",
             "--sort",
