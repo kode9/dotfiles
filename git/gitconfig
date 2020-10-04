@@ -34,6 +34,7 @@
 [log]
   decorate=full
 	date = iso8601
+	showSignature = true
 
 [merge]
   conflictstyle = diff3
@@ -125,3 +126,7 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[commit]
+	gpgSign = true
+[tag]
+	gpgSign = true
