@@ -12,9 +12,34 @@ Pierre-Luc Perrier <dev@the-pluc.net>
 
 == Dependencies
 
-* exa
-* xsel
-* tmux
+http://compression.ca/pbzip2/[pbzip2]:: Parallel implementation of the bzip2 block-sorting file compressor
+http://www.vergenet.net/~conrad/software/xsel/[xsel]:: XSel is a command-line program for getting and setting the contents of the X selection
+https://ccache.samba.org/[ccache]:: Compiler cache that speeds up recompilation by caching previous compilations
+https://github.com/BurntSushi/ripgrep[ripgrep]:: A search tool that combines the usability of ag with the raw speed of grep
+https://github.com/antifuchs/chars[chars]:: Command line tool to display information about unicode characters.
+https://github.com/bootandy/dust[dust]:: du + rust = dust. Like du but more intuitive
+https://github.com/bvaisvil/zenith[zenith]:: Terminal system monitor with histograms, written in Rust
+https://github.com/dalance/procs[procs]:: A modern replacement for ps written by Rust
+https://github.com/darakian/ddh[ddh]:: Manage duplicate files
+https://github.com/dbrgn/tealdeer[tealdeer]:: A fast tldr client in Rust.
+https://github.com/ggreer/the_silver_searcher[the_silver_searcher]:: Code searching tool similar to Ack, but faster
+https://github.com/jwilm/alacritty[alacritty]:: A cross-platform, GPU-accelerated terminal emulator
+https://github.com/sharkdp/bat[bat]:: Cat clone with syntax highlighting and git integration
+https://github.com/sharkdp/fd[fd]:: Simple, fast and user-friendly alternative to find
+https://github.com/sharkdp/hyperfine[hyperfine]:: A command-line benchmarking tool
+https://github.com/tmux/tmux/wiki[tmux]:: A terminal multiplexer
+https://github.com/watchexec/watchexec[watchexec]:: Executes commands in response to file modifications
+https://the.exa.website/[exa]::ls replacement
+https://www.gnu.org/software/emacs/emacs.html[emacs]:: The extensible, customizable, self-documenting real-time display editor
+https://www.mozilla.org/firefox/[firefox]:: Standalone web browser from mozilla.org
+https://www.zlib.net/pigz[pigz]:: Parallel implementation of the gzip file compressor
+
+=== A tester
+
+* sd: sed alternative
+* podman
+* jq/jc
+* dot (rust) dotfile manager
 
 == Key bindings
 
