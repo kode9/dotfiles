@@ -65,14 +65,14 @@
         "db only": true,
         "path": "/usr/bin/rsync",
         "servers": [
-            "rsync://archlinux.mailtunnel.eu/archlinux/$repo/os/$arch",
             "rsync://mirror.chaoticum.net/arch/$repo/os/$arch",
-            "rsync://mirrors.uni-plovdiv.net/archlinux/$repo/os/$arch",
-            "rsync://ger.mirror.pkgbuild.com/packages/$repo/os/$arch",
-            "rsync://mirror.neuf.no/archlinux/$repo/os/$arch",
-            "rsync://mirrors.atviras.lt/archlinux/$repo/os/$arch",
-            "rsync://ftp.nluug.nl/archlinux/$repo/os/$arch",
-            "rsync://rsync.mirrors.niyawe.de/archlinux/$repo/os/$arch"
+            "rsync://mirror.pkgbuild.com/packages/$repo/os/$arch",
+            "rsync://mirror.orbit-os.com/archlinux/$repo/os/$arch",
+            "rsync://mirror.f4st.host/archlinux/$repo/os/$arch",
+            "rsync://archlinux.mailtunnel.eu/archlinux/$repo/os/$arch",
+            "rsync://phinau.de/arch/$repo/os/$arch",
+            "rsync://mirror.pseudoform.org/packages/$repo/os/$arch",
+            "rsync://arch.mirror.square-r00t.net/arch/$repo/os/$arch"
         ]
     }
 }
