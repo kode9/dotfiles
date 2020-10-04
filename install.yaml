@@ -32,6 +32,7 @@
     ~/.bash_profile: shell/bash/bash_profile
     ~/.bashrc: shell/bash/bashrc
     ~/.config/alacritty/alacritty.yml: shell/alacritty.yml
+    ~/.config/gamemode.ini: gamemode.ini
     ~/.config/git/ignore: git/gitignore
     ~/.config/pacman/makepkg.conf: arch/makepkg.conf
     ~/.config/yay/config.json: arch/yay.json
