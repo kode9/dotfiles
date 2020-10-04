@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+#
+# https://wiki.alpinelinux.org/wiki/Finding_the_fastest_mirror
+
+echo -n 'Warmup..'
+
+for s in $(wget -qO- http://rsync.alpinelinux.org/alpine/MIRRORS.txt); do
+  wget -T 0.15 -q $s/MIRRORS.txt -O /dev/null 2>&1
+  echo -n '.'
+done
+
+echo '. Done'
+
+data=""
+
+for s in $(wget -qO- http://rsync.alpinelinux.org/alpine/MIRRORS.txt); do
+  echo -n "$s.."
+  t=$(time -f "%E" wget -T 0.35 -q $s/MIRRORS.txt -O /dev/null 2>&1)
+  echo ". $t"
+  data="$data$t $s\n"
+done
+
+echo "===RESULTS==="
+
+echo -e $data | sort | head -n 5
