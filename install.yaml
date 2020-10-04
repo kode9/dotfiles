@@ -42,6 +42,7 @@
     ~/.gnupg/gpg.conf: gpg/gpg.conf
     ~/.local/share/applications/emacsclient-n.desktop: xdg/emacsclient-n.desktop
     ~/.pam_environment: X11/pam_environment
+    ~/.popt: shell/popt
     ~/.tmux.conf: shell/tmux.conf
     ~/.xinitrc: X11/xinitrc
     ~/.xserverrc: X11/xserverrc
