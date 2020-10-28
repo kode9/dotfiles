@@ -11,7 +11,7 @@
       command: git submodule --quiet update --init --recursive
       description: Checking submodules
       stderr: true
-    - [sh -c 'mkdir -vp ~/.cache/aur/{pkg,src,srcpkg,logs}', Creating directories]
+    - [sh -c 'mkdir -vp ~/.cache/aur/pkg ~/.cache/aur/src ~/.cache/aur/srcpkg ~/.cache/aur/logs', Creating directories]
     - [sh -c 'mkdir -vp -m 700 ~/.gnupg && chmod -c 700 ~/.gnupg', Checking GPG directory]
     - [sh -c 'mkdir -vp -m 700 ~/.ssh && chmod -c 700 ~/.ssh', Checking SSH directory]
     -
