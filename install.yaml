@@ -35,6 +35,7 @@
     ~/.config/gamemode.ini: gamemode.ini
     ~/.config/git/ignore: git/gitignore
     ~/.config/pacman/makepkg.conf: arch/makepkg.conf
+    ~/.config/paru/paru.conf: arch/paru.conf
     ~/.config/yay/config.json: arch/yay.json
     ~/.dotfiles: ''
     ~/.gitconfig: git/gitconfig
