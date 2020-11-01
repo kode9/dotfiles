@@ -734,7 +734,7 @@ key_bindings:
   - { mods: Shift, key: PageDown, action: ScrollLineDown }
   - { mods: Control, key: PageUp, action: ScrollPageUp }
   - { mods: Control, key: PageDown, action: ScrollPageDown }
-  - { mods: Control, key: F, action: ToggleFullscreen }
+  - { mods: Control|Shift, key: F, action: ToggleFullscreen }
   - { mods: Control|Shift, key: S, action: SearchForward }
   - { mods: Control|Shift, key: R, action: SearchBackward }
   - { mods: Control|Shift, key: N, action: SpawnNewInstance }
