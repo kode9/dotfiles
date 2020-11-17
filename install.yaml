@@ -31,6 +31,7 @@
     ~/.bash_logout: shell/bash/bash_logout
     ~/.bash_profile: shell/bash/bash_profile
     ~/.bashrc: shell/bash/bashrc
+    ~/.cargo/config: rust/cargo
     ~/.config/alacritty/alacritty.yml: shell/alacritty.yml
     ~/.config/gamemode.ini: gamemode.ini
     ~/.config/git/ignore: git/gitignore
