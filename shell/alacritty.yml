@@ -363,11 +363,11 @@ live_config_reload: true
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  # program: /bin/fish
+  # program: /usr/bin/fish
   # args:
   #   - --login
   #   - --interactive
-  program: /bin/tmux
+  program: /usr/bin/tmux
   args:
     - -u # force UTF-8 in tmux
 
