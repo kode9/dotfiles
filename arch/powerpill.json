@@ -43,17 +43,15 @@
         "reflect databases": true
     },
     "reflector": {
-        "args": [
+        "args.unuseds": [
             "--protocol",
             "http",
             "--latest",
-            "16",
+            "12",
             "--sort",
             "rate",
-            "--threads",
-            "4",
             "--fastest",
-            "8"
+            "6"
         ]
     },
     "rsync": {
