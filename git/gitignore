@@ -42,4 +42,6 @@ ehthumbs.db
 *.sqlite
 
 # Development
+.cache/
+.clangd/
 TAGS
