@@ -3,7 +3,7 @@
 Type=Application
 Name=EmacsNoWait
 Exec=emacsclient -n %F
-MimeType=text/x-log;
+MimeType=text/x-log;text/xml;
 Terminal=false
 NoDisplay=true
 Comment=Emacsclient without waiting
