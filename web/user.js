@@ -1329,6 +1329,10 @@ user_pref("security.insecure_connection_icon.enabled", true);
 user_pref("security.insecure_connection_icon.pbmode.enabled", true);
 user_pref("security.insecure_connection_text.enabled", true);
 user_pref("security.insecure_connection_text.pbmode.enabled", true);
+// HTTPS only
+user_pref("dom.security.https_only_mode", true);
+user_pref("dom.security.https_only_mode_ever_enabled", true);
+user_pref("dom.security.https_only_mode_pbm", false); // Only in private mode
 
 /////////////////
 // Custom/Sync //
@@ -1449,6 +1453,9 @@ user_pref("services.sync.prefs.sync.dom.maxHardwareConcurrency", true);
 user_pref("services.sync.prefs.sync.dom.mozTCPSocket.enabled", true);
 user_pref("services.sync.prefs.sync.dom.netinfo.enabled", true);
 user_pref("services.sync.prefs.sync.dom.network.enabled", true);
+user_pref("services.sync.prefs.sync.dom.security.https_only_mode", true);
+user_pref("services.sync.prefs.sync.dom.security.https_only_mode_ever_enabled", true);
+user_pref("services.sync.prefs.sync.dom.security.https_only_mode_pbm", false); // Only in private mode
 user_pref("services.sync.prefs.sync.dom.serviceWorkers.enabled", true);
 user_pref("services.sync.prefs.sync.dom.telephony.enabled", true);
 user_pref("services.sync.prefs.sync.dom.vibrator.enabled", true);
