@@ -1216,9 +1216,12 @@ user_pref("security.ssl3.ecdhe_ecdsa_aes_256_sha",		false); // 0xc00a
 
 // Warn when entering in about:config
 user_pref("general.warnOnAboutConfig", false);
+user_pref("browser.aboutConfig.showWarning", false);
 // Startup page (0=blank, 1=home, 2=last visited page, 3=resume previous session)
 user_pref("browser.startup.page", 3);
-// Navigate tabs by last use
+// Cycle tabs by last used
+user_pref("browser.ctrlTab.recentlyUsedOrder", true);
+// Show tab previews
 user_pref("browser.ctrlTab.previews", false);
 // Home page (about:home, about:blank, URL)
 user_pref("browser.startup.homepage", "about:blank");
@@ -1230,6 +1233,10 @@ user_pref("browser.tabs.loadInBackground", true);
 user_pref("layout.spellcheckDefault", 1);
 // Disable accessibility services
 user_pref("accessibility.force_disabled", 1);
+// Don't warn when closing multiple tabs
+user_pref("browser.tabs.warnOnClose", false);
+// Always show bookmarks
+user_pref("browser.toolbars.bookmarks.visibility", "always");
 
 ////////////////////////
 // Custom/Geolocation //
@@ -1340,6 +1347,7 @@ user_pref("services.sync.prefs.sync.app.shield.optoutstudies.enabled", true);
 user_pref("services.sync.prefs.sync.app.update.enabled", true);
 user_pref("services.sync.prefs.sync.beacon.enabled", true);
 user_pref("services.sync.prefs.sync.breakpad.reportURL", true);
+user_pref("services.sync.prefs.sync.browser.aboutConfig.showWarning", false);
 user_pref("services.sync.prefs.sync.browser.aboutHomeSnippets.updateUrl", true);
 user_pref("services.sync.prefs.sync.browser.bookmarks.max_backups", true);
 user_pref("services.sync.prefs.sync.browser.cache.disk.enable", true);
@@ -1349,6 +1357,7 @@ user_pref("services.sync.prefs.sync.browser.casting.enabled", true);
 user_pref("services.sync.prefs.sync.browser.contentblocking.category", true);
 user_pref("services.sync.prefs.sync.browser.crashReports.unsubmittedCheck.enabled", true);
 user_pref("services.sync.prefs.sync.browser.ctrlTab.previews", true);
+user_pref("services.sync.prefs.sync.browser.ctrlTab.recentlyUsedOrder", true);
 user_pref("services.sync.prefs.sync.browser.discovery.enabled", true);
 user_pref("services.sync.prefs.sync.browser.display.use_document_fonts", true);
 user_pref("services.sync.prefs.sync.browser.download.folderList", true);
@@ -1408,6 +1417,8 @@ user_pref("services.sync.prefs.sync.browser.startup.homepage_override.buildID", 
 user_pref("services.sync.prefs.sync.browser.startup.page", true);
 user_pref("services.sync.prefs.sync.browser.tabs.crashReporting.sendReport", true);
 user_pref("services.sync.prefs.sync.browser.tabs.loadInBackground", true);
+user_pref("services.sync.prefs.sync.browser.tabs.warnOnClose", true);
+user_pref("services.sync.prefs.sync.browser.toolbars.bookmarks.visibility", true);
 user_pref("services.sync.prefs.sync.browser.uitour.enabled", true);
 user_pref("services.sync.prefs.sync.browser.urlbar.autoFill", true);
 user_pref("services.sync.prefs.sync.browser.urlbar.autoFill.typed", true);
