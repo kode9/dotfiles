@@ -1058,7 +1058,7 @@ user_pref("security.ssl.disable_session_identifiers",		true);
 // 2 = TLS 1.1 is the minimum required / maximum supported encryption protocol.
 // 3 = TLS 1.2 is the minimum required / maximum supported encryption protocol.
 // 4 = TLS 1.3 is the minimum required / maximum supported encryption protocol.
-user_pref("security.tls.version.min",				2);
+user_pref("security.tls.version.min",				3);
 user_pref("security.tls.version.max",				4);
 
 // PREF: Disable insecure TLS version fallback
@@ -1197,10 +1197,10 @@ user_pref("security.ssl3.dhe_dss_camellia_128_sha",		false);
 user_pref("security.ssl3.dhe_dss_camellia_256_sha",		false);
 
 // PREF: Ciphers with CBC & SHA-1 (disabled)
-user_pref("security.ssl3.rsa_aes_256_sha",			true); // 0x35
-user_pref("security.ssl3.rsa_aes_128_sha",			true); // 0x2f
-//user_pref("security.ssl3.ecdhe_rsa_aes_256_sha",		false); // 0xc014
-//user_pref("security.ssl3.ecdhe_ecdsa_aes_256_sha",		false); // 0xc00a
+user_pref("security.ssl3.rsa_aes_256_sha",			false); // 0x35
+user_pref("security.ssl3.rsa_aes_128_sha",			false); // 0x2f
+user_pref("security.ssl3.ecdhe_rsa_aes_256_sha",		false); // 0xc014
+user_pref("security.ssl3.ecdhe_ecdsa_aes_256_sha",		false); // 0xc00a
 
 ////////////
 // Custom //
