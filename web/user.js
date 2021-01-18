@@ -1270,15 +1270,10 @@ user_pref("media.eme.enabled", true);
 // Custom/Privacy //
 ////////////////////
 
-// Disable sending reports of tab crashes
-user_pref("browser.crashReports.unsubmittedCheck.autoSubmit", false); // (FF51-57)
-user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false); // (FF58+)
 // Disable data sharing (FF58+)
 user_pref("browser.safebrowsing.provider.google4.dataSharing.enabled", false);
 // DNT
 user_pref("privacy.donottrackheader.enabled", false);
-// NORMANDY (https://github.com/mozilla/normandy)
-user_pref("app.normandy.enabled", false);
 // Activity stream
 user_pref("browser.library.activity-stream.enabled", false);
 // Search
@@ -1339,6 +1334,7 @@ user_pref("dom.security.https_only_mode_pbm", false); // Only in private mode
 /////////////////
 
 user_pref("services.sync.prefs.sync.accessibility.force_disabled", true);
+user_pref("services.sync.prefs.sync.app.normandy.api_url", true);
 user_pref("services.sync.prefs.sync.app.normandy.enabled", true);
 user_pref("services.sync.prefs.sync.app.shield.optoutstudies.enabled", true);
 user_pref("services.sync.prefs.sync.app.update.enabled", true);
@@ -1351,8 +1347,6 @@ user_pref("services.sync.prefs.sync.browser.cache.disk_cache_ssl", true);
 user_pref("services.sync.prefs.sync.browser.cache.offline.enable", true);
 user_pref("services.sync.prefs.sync.browser.casting.enabled", true);
 user_pref("services.sync.prefs.sync.browser.contentblocking.category", true);
-user_pref("services.sync.prefs.sync.browser.crashReports.unsubmittedCheck.autoSubmit", true);
-user_pref("services.sync.prefs.sync.browser.crashReports.unsubmittedCheck.autoSubmit2", true);
 user_pref("services.sync.prefs.sync.browser.crashReports.unsubmittedCheck.enabled", true);
 user_pref("services.sync.prefs.sync.browser.ctrlTab.previews", true);
 user_pref("services.sync.prefs.sync.browser.discovery.enabled", true);
@@ -1373,7 +1367,6 @@ user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.asrouter.
 user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.enabled", true);
 user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.feeds.section.highlights", true);
 user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.feeds.section.topstories", true);
-user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.feeds.snippets", true);
 user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.feeds.snippets", true);
 user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.feeds.topsites", true);
 user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.prerender", true);
@@ -1403,13 +1396,13 @@ user_pref("services.sync.prefs.sync.browser.search.geoip.url", true);
 user_pref("services.sync.prefs.sync.browser.search.region", true);
 user_pref("services.sync.prefs.sync.browser.search.suggest.enabled", true);
 user_pref("services.sync.prefs.sync.browser.search.update", true);
-user_pref("services.sync.prefs.sync.browser.selfsupport.url", true);
 user_pref("services.sync.prefs.sync.browser.send_pings", true);
 user_pref("services.sync.prefs.sync.browser.send_pings.require_same_host", true);
 user_pref("services.sync.prefs.sync.browser.sessionstore.privacy_level", true);
 user_pref("services.sync.prefs.sync.browser.shell.checkDefaultBrowser", true);
 user_pref("services.sync.prefs.sync.browser.shell.shortcutFavicons", true);
 user_pref("services.sync.prefs.sync.browser.ssl_override_behavior", true);
+user_pref("services.sync.prefs.sync.browser.startup.blankWindow", true);
 user_pref("services.sync.prefs.sync.browser.startup.homepage", true);
 user_pref("services.sync.prefs.sync.browser.startup.homepage_override.buildID", true);
 user_pref("services.sync.prefs.sync.browser.startup.page", true);
@@ -1455,7 +1448,7 @@ user_pref("services.sync.prefs.sync.dom.netinfo.enabled", true);
 user_pref("services.sync.prefs.sync.dom.network.enabled", true);
 user_pref("services.sync.prefs.sync.dom.security.https_only_mode", true);
 user_pref("services.sync.prefs.sync.dom.security.https_only_mode_ever_enabled", true);
-user_pref("services.sync.prefs.sync.dom.security.https_only_mode_pbm", false); // Only in private mode
+user_pref("services.sync.prefs.sync.dom.security.https_only_mode_pbm", true);
 user_pref("services.sync.prefs.sync.dom.serviceWorkers.enabled", true);
 user_pref("services.sync.prefs.sync.dom.telephony.enabled", true);
 user_pref("services.sync.prefs.sync.dom.vibrator.enabled", true);
@@ -1476,6 +1469,7 @@ user_pref("services.sync.prefs.sync.extensions.pocket.enabled", true);
 user_pref("services.sync.prefs.sync.extensions.shield-recipe-client.enabled", true);
 user_pref("services.sync.prefs.sync.extensions.systemAddon.update.enabled", true);
 user_pref("services.sync.prefs.sync.extensions.update.enabled", true);
+user_pref("services.sync.prefs.sync.extensions.webextensions.restrictedDomains", "");
 user_pref("services.sync.prefs.sync.general.buildID.override", true);
 user_pref("services.sync.prefs.sync.general.warnOnAboutConfig", true);
 user_pref("services.sync.prefs.sync.geo.enabled", true);
@@ -1516,6 +1510,7 @@ user_pref("services.sync.prefs.sync.network.cookie.thirdparty.sessionOnly", true
 user_pref("services.sync.prefs.sync.network.dns.blockDotOnion", true);
 user_pref("services.sync.prefs.sync.network.dns.disablePrefetch", true);
 user_pref("services.sync.prefs.sync.network.dns.disablePrefetchFromHTTPS", true);
+user_pref("services.sync.prefs.sync.network.http.referer.XOriginPolicy", true);
 user_pref("services.sync.prefs.sync.network.http.referer.spoofSource", true);
 user_pref("services.sync.prefs.sync.network.http.speculative-parallel-limit", true);
 user_pref("services.sync.prefs.sync.network.jar.open-unsafe-types", true);
@@ -1546,9 +1541,9 @@ user_pref("services.sync.prefs.sync.network.protocol-handler.external.javascript
 user_pref("services.sync.prefs.sync.network.protocol-handler.external.moz-extension", true);
 user_pref("services.sync.prefs.sync.network.protocol-handler.warn-external-default", true);
 user_pref("services.sync.prefs.sync.network.proxy.socks_remote_dns", true);
+user_pref("services.sync.prefs.sync.network.security.esni.enabled", true);
 user_pref("services.sync.prefs.sync.network.stricttransportsecurity.preloadlist", true);
 user_pref("services.sync.prefs.sync.network.trr.mode", true);
-user_pref("services.sync.prefs.sync.network.trr.uri", true);
 user_pref("services.sync.prefs.sync.pdfjs.disabled", true);
 user_pref("services.sync.prefs.sync.permissions.default.geo", true);
 user_pref("services.sync.prefs.sync.places.history.enabled", true);
@@ -1567,7 +1562,6 @@ user_pref("services.sync.prefs.sync.privacy.clearOnShutdown.formdata", true);
 user_pref("services.sync.prefs.sync.privacy.clearOnShutdown.history", true);
 user_pref("services.sync.prefs.sync.privacy.clearOnShutdown.offlineApps", true);
 user_pref("services.sync.prefs.sync.privacy.clearOnShutdown.openWindows", true);
-user_pref("services.sync.prefs.sync.privacy.clearOnShutdown.passwords", true);
 user_pref("services.sync.prefs.sync.privacy.clearOnShutdown.sessions", true);
 user_pref("services.sync.prefs.sync.privacy.cpd.cache", true);
 user_pref("services.sync.prefs.sync.privacy.cpd.cookies", true);
@@ -1579,6 +1573,7 @@ user_pref("services.sync.prefs.sync.privacy.cpd.sessions", true);
 user_pref("services.sync.prefs.sync.privacy.donottrackheader.enabled", true);
 user_pref("services.sync.prefs.sync.privacy.firstparty.isolate", true);
 user_pref("services.sync.prefs.sync.privacy.resistFingerprinting", true);
+user_pref("services.sync.prefs.sync.privacy.resistFingerprinting.block_mozAddonManager", true);
 user_pref("services.sync.prefs.sync.privacy.sanitize.sanitizeOnShutdown", true);
 user_pref("services.sync.prefs.sync.privacy.sanitize.timeSpan", true);
 user_pref("services.sync.prefs.sync.privacy.trackingprotection.cryptomining.enabled", true);
@@ -1667,7 +1662,6 @@ user_pref("services.sync.prefs.sync.security.tls.version.max", true);
 user_pref("services.sync.prefs.sync.security.tls.version.min", true);
 user_pref("services.sync.prefs.sync.security.xpconnect.plugin.unrestricted", true);
 user_pref("services.sync.prefs.sync.services.blocklist.update_enabled", true);
-user_pref("services.sync.prefs.sync.shumway.disabled", true);
 user_pref("services.sync.prefs.sync.signon.autofillForms", true);
 user_pref("services.sync.prefs.sync.signon.autofillForms.http", true);
 user_pref("services.sync.prefs.sync.signon.formlessCapture.enabled", true);
