@@ -1,10 +1,18 @@
 - defaults:
     link:
-      relink: false
       create: true
       force: false
+      relink: true
 
-- clean: ['~', '~/.gnupg', '~/.config/git', '~/.local/share/applications']
+- clean:
+    ~/:
+    ~/.gnupg/:
+    ~/.ssh/:
+    ~/.config/:
+      recursive: true
+    ~/.local/share:
+      recursive: true
+      force: true
 
 - shell:
     -
