@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # http://stackoverflow.com/a/29835459/1024122
-readonly _basedir=$(CDPATH= cd -- "$(dirname -- "${0}")" && pwd -P)
+readonly _basedir=$(CDPATH='' cd -- "$(dirname -- "${0}")" && pwd -P)
 readonly _dotbot_dir='3dparty/dotbot'
 readonly _dotbot_bin="${_dotbot_dir}/bin/dotbot"
 readonly _config='install.yaml'
@@ -9,7 +9,7 @@ readonly _config='install.yaml'
 [ -d "${_basedir}" ] && [ -x "${_basedir}" ] \
   || { echo "Failed to get base directory" >&2; exit 1; }
 
-cd -- "${_basedir}" >/dev/null
+cd -- "${_basedir}" >/dev/null || exit 1
 
 [ -d "${_dotbot_dir}" ] && [ -x "${_dotbot_dir}" ] \
   || { echo "Cannot find dotbot directory [${_dotbot_dir}]" >&2; exit 1; }
