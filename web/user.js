@@ -543,7 +543,7 @@ user_pref("extensions.webextensions.restrictedDomains", "");
 
 // PREF: enable RFP letterboxing / resizing of inner window [FF67+] (disabled)
 // https://bugzilla.mozilla.org/1407366
-user_pref("privacy.resistFingerprinting.letterboxing", true);
+user_pref("privacy.resistFingerprinting.letterboxing", false);
 //user_pref("privacy.resistFingerprinting.letterboxing.dimensions", "800x600, 1000x1000, 1600x900");
 
 // PREF: disable showing about:blank/maximized window as soon as possible during startup [FF60+]
