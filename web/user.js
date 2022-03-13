@@ -8,24 +8,35 @@
  * SECTION: HTML5 / APIs / DOM                                                *
  ******************************************************************************/
 
-// PREF: Disable Service Workers
+// PREF: Disable Service Workers (disabled)
 // https://developer.mozilla.org/en-US/docs/Web/API/Worker
 // https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker_API
 // https://wiki.mozilla.org/Firefox/Push_Notifications#Service_Workers
-// NOTICE: Disabling ServiceWorkers breaks functionality on some sites (Google Street View...)
-// NOTICE: Disabling ServiceWorkers breaks Firefox Sync
+// NOTICE-DISABLED: Disabling ServiceWorkers breaks functionality on some sites (Google Street View...)
+// NOTICE-DISABLED: Disabling ServiceWorkers breaks Firefox Sync
 // Unknown security implications
 // CVE-2016-5259, CVE-2016-2812, CVE-2016-1949, CVE-2016-5287 (fixed)
 user_pref("dom.serviceWorkers.enabled",				true);
 
-// PREF: Disable web notifications
-// https://support.mozilla.org/en-US/questions/1140439
+// PREF: Disable Web Workers (disabled)
+// https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
+// https://www.w3schools.com/html/html5_webworkers.asp
+// NOTICE-DISABLED: Disabling Web Workers breaks "Download as ZIP" functionality on https://mega.nz/, WhatsApp Web, upload on https://www.virustotal.com/,  and probably others
+user_pref("dom.workers.enabled",					true);
+
+// PREF: Disable web notifications (disabled)
+// https://support.mozilla.org/t5/Firefox/I-can-t-find-Firefox-menu-I-m-trying-to-opt-out-of-Web-Push-and/m-p/1317495#M1006501
 user_pref("dom.webnotifications.enabled",			true);
 
 // PREF: Disable DOM timing API
 // https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI
 // https://www.w3.org/TR/navigation-timing/#privacy
 user_pref("dom.enable_performance",				false);
+
+// PREF: Disable resource timing API (disabled)
+// https://www.w3.org/TR/resource-timing/#privacy-security
+// NOTICE: Disabling resource timing API breaks some DDoS protection pages (Cloudflare)
+user_pref("dom.enable_resource_timing",				true);
 
 // PREF: Make sure the User Timing API does not provide a new high resolution timestamp
 // https://trac.torproject.org/projects/tor/ticket/16336
@@ -104,13 +115,13 @@ user_pref("dom.telephony.enabled",				false);
 // https://developer.mozilla.org/en-US/docs/Web/API/navigator.sendBeacon
 user_pref("beacon.enabled",					false);
 
-// PREF: Disable clipboard event detection (onCut/onCopy/onPaste) via Javascript
-// NOTICE: Disabling clipboard events breaks Ctrl+C/X/V copy/cut/paste functionaility in JS-based web applications (Google Docs...)
+// PREF: Disable clipboard event detection (onCut/onCopy/onPaste) via Javascript (disabled)
+// NOTICE-DISABLED: Disabling clipboard events breaks Ctrl+C/X/V copy/cut/paste functionaility in JS-based web applications (Google Docs...)
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled
-user_pref("dom.event.clipboardevents.enabled",			false);
+user_pref("dom.event.clipboardevents.enabled",			true);
 
-// PREF: Disable "copy to clipboard" functionality via Javascript (Firefox >= 41)
-// NOTICE: Disabling clipboard operations will break legitimate JS-based "copy to clipboard" functionality
+// PREF: Disable "copy to clipboard" functionality via Javascript (Firefox >= 41) (disabled)
+// NOTICE-DISABLED: Disabling clipboard operations will break legitimate JS-based "copy to clipboard" functionality
 // https://hg.mozilla.org/mozilla-central/rev/2f9f8ea4b9c3
 user_pref("dom.allow_cut_copy", true);
 
@@ -159,10 +170,6 @@ user_pref("dom.vr.enabled",					false);
 
 // PREF: Disable vibrator API
 user_pref("dom.vibrator.enabled",           false);
-
-// PREF: Disable resource timing API
-// https://www.w3.org/TR/resource-timing/#privacy-security
-user_pref("dom.enable_resource_timing",				false);
 
 // PREF: Disable Archive API (Firefox < 54)
 // https://wiki.mozilla.org/WebAPI/ArchiveAPI
@@ -222,6 +229,9 @@ user_pref("intl.accept_languages",				"en-US, en");
 // http://kb.mozillazine.org/Intl.locale.matchOS
 user_pref("intl.locale.matchOS",				false);
 
+// Use LANG environment variable to choose locale (disabled)
+//pref("intl.locale.requested", "");
+
 // PREF: Don't use Mozilla-provided location-specific search engines
 user_pref("browser.search.geoSpecificDefaults",			false);
 
@@ -264,9 +274,9 @@ user_pref("network.manage-offline-status",			false);
 // https://blog.mozilla.org/tanvi/2013/04/10/mixed-content-blocking-enabled-in-firefox-23/
 user_pref("security.mixed_content.block_active_content",	true);
 
-// PREF: Enforce Mixed Passive Content blocking (a.k.a. Mixed Display Content)
-// NOTICE: Enabling Mixed Display Content blocking can prevent images/styles... from loading properly when connection to the website is only partially secured
-user_pref("security.mixed_content.block_display_content",	true);
+// PREF: Enforce Mixed Passive Content blocking (a.k.a. Mixed Display Content) (disabled)
+// NOTICE-DISABLED: Enabling Mixed Display Content blocking can prevent images/styles... from loading properly when connection to the website is only partially secured
+user_pref("security.mixed_content.block_display_content",	false);
 
 // PREF: Disable JAR from opening Unsafe File Types
 // http://kb.mozillazine.org/Network.jar.open-unsafe-types
@@ -530,6 +540,7 @@ user_pref("privacy.userContext.enabled",			true);
 // https://wiki.mozilla.org/Security/Fingerprinting
 // NOTICE: RFP breaks some keyboard shortcuts used in certain websites (see #443)
 // NOTICE: RFP changes your time zone
+// NOTICE: RFP breaks some DDoS protection pages (Cloudflare)
 user_pref("privacy.resistFingerprinting",			true);
 
 // PREF: disable mozAddonManager Web API [FF57+]
@@ -578,7 +589,6 @@ user_pref("app.normandy.api_url", "");
 user_pref("extensions.shield-recipe-client.enabled",		false);
 user_pref("app.shield.optoutstudies.enabled",			false);
 
-
 // PREF: Disable Firefox Hello (disabled) (Firefox < 49)
 // https://wiki.mozilla.org/Loop
 // https://support.mozilla.org/t5/Chat-and-share/Support-for-Hello-discontinued-in-Firefox-49/ta-p/37946
@@ -593,7 +603,6 @@ user_pref("loop.logDomains",					false);
 // NOTICE: Fully automatic updates are disabled and left to package management systems on Linux. Windows users may want to change this setting.
 // CIS 2.1.1
 user_pref("app.update.auto",					false);
-user_pref("app.update.background.scheduling.enabled", false);
 
 // PREF: Enforce checking for Firefox updates
 // http://kb.mozillazine.org/App.update.enabled
@@ -666,6 +675,10 @@ user_pref("browser.search.suggest.enabled",			false);
 user_pref("browser.urlbar.suggest.searches",			false);
 // PREF: When using the location bar, don't suggest URLs from browsing history
 user_pref("browser.urlbar.suggest.history",			true);
+// PREF: Disable Firefox Suggest
+// https://www.ghacks.net/2021/09/09/how-to-disable-firefox-suggest/
+// https://support.mozilla.org/en-US/kb/navigate-web-faster-firefox-suggest
+user_pref("browser.urlbar.groupLabels.enabled", false); // Firefox >= 93
 
 // PREF: Disable SSDP
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1111967
@@ -773,14 +786,13 @@ user_pref("network.cookie.thirdparty.sessionOnly",		true);
  * SECTION: Caching                                                            *
  ******************************************************************************/
 
-// PREF: Permanently enable private browsing mode
+// PREF: Permanently enable private browsing mode (disabled)
 // https://support.mozilla.org/en-US/kb/Private-Browsing
 // https://wiki.mozilla.org/PrivateBrowsing
-// NOTICE: You can not view or inspect cookies when in private browsing: https://bugzilla.mozilla.org/show_bug.cgi?id=823941
-// NOTICE: When Javascript is enabled, Websites can detect use of Private Browsing mode
-// NOTICE: Private browsing breaks Kerberos authentication
-// NOTICE: Disables "Containers" functionality (see below)
-// NOTICE: "Always use private browsing mode" (browser.privatebrowsing.autostart) disables the possibility to use password manager: https://support.mozilla.org/en-US/kb/usernames-and-passwords-are-not-saved#w_private-browsing
+// NOTICE-DISABLED: You can not view or inspect cookies when in private browsing: https://bugzilla.mozilla.org/show_bug.cgi?id=823941
+// NOTICE-DISABLED: When Javascript is enabled, Websites can detect use of Private Browsing mode
+// NOTICE-DISABLED: Private browsing breaks Kerberos authentication
+// NOTICE-DISABLED: Disables "Containers" functionality (see below)
 user_pref("browser.privatebrowsing.autostart",			false);
 
 // PREF: Do not download URLs for the offline cache
@@ -799,6 +811,7 @@ user_pref("privacy.clearOnShutdown.downloads",			true);
 user_pref("privacy.clearOnShutdown.formdata",			true);
 user_pref("privacy.clearOnShutdown.history",			false);
 user_pref("privacy.clearOnShutdown.offlineApps",		true);
+user_pref("privacy.clearOnShutdown.passwords",			true);
 user_pref("privacy.clearOnShutdown.sessions",			false);
 user_pref("privacy.clearOnShutdown.openWindows",		false);
 
@@ -1065,7 +1078,7 @@ user_pref("security.OCSP.require",				true);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=967977
 user_pref("security.ssl.disable_session_identifiers",		true);
 
-// PREF: Only allow TLS 1.[0-3]
+// PREF: Only allow TLS 1.[2-3]
 // http://kb.mozillazine.org/Security.tls.version.*
 // 1 = TLS 1.0 is the minimum required / maximum supported encryption protocol. (This is the current default for the maximum supported version.)
 // 2 = TLS 1.1 is the minimum required / maximum supported encryption protocol.
@@ -1077,7 +1090,7 @@ user_pref("security.tls.version.max",				4);
 // PREF: Disable insecure TLS version fallback
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1084025
 // https://github.com/pyllyukko/user.js/pull/206#issuecomment-280229645
-user_pref("security.tls.version.fallback-limit",		3);
+user_pref("security.tls.version.fallback-limit",		4);
 
 // PREF: Enforce Public Key Pinning
 // https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning
