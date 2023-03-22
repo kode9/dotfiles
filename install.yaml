@@ -43,6 +43,7 @@
     ~/.config/alacritty/alacritty.yml: shell/alacritty.yml
     ~/.config/gamemode.ini: misc/gamemode.ini
     ~/.config/git/ignore: git/gitignore
+    ~/.config/iwgtk.conf: misc/iwgtk.conf
     ~/.config/pacman/makepkg.conf: arch/makepkg.conf
     ~/.config/paru/paru.conf: arch/paru.conf
     ~/.config/yay/config.json: arch/yay.json
