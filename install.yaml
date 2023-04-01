@@ -10,9 +10,7 @@
     ~/.ssh/:
     ~/.config/:
       recursive: true
-    ~/.local/share:
-      recursive: true
-      force: true
+    ~/.local/share/applications/:
 
 - shell:
     -
