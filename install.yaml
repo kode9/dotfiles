@@ -40,6 +40,7 @@
     ~/.bashrc: shell/bash/bashrc
     ~/.cargo/config.toml: rust/cargo.toml
     ~/.config/alacritty/alacritty.yml: shell/alacritty.yml
+    ~/.config/environment.d/environment.conf: misc/environment.conf
     ~/.config/gamemode.ini: misc/gamemode.ini
     ~/.config/git/ignore: git/gitignore
     ~/.config/iwgtk.conf: misc/iwgtk.conf
