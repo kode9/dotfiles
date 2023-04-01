@@ -43,15 +43,22 @@
         "reflect databases": true
     },
     "reflector": {
-        "args.unuseds": [
+        "args": [
+            "--ipv4",
             "--protocol",
-            "http",
+            "http,https",
+            "--country",
+            "AT,BE,DK,FI,FR,DE,IT,LU,NL,NO,ES,SE,GB",
             "--latest",
             "12",
+            "--score",
+            "8",
+            "--fastest",
+            "4",
             "--sort",
             "rate",
-            "--fastest",
-            "6"
+            "--download-timeout",
+            "10"
         ]
     },
     "rsync": {
