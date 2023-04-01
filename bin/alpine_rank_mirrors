@@ -1,11 +1,18 @@
-#!/usr/bin/env sh
+#!/usr/bin/env dash
 #
+# https://mirrors.alpinelinux.org/
 # https://wiki.alpinelinux.org/wiki/Finding_the_fastest_mirror
+#
+
+set -ux
+
+MIRRORLIST_URL="https://dl-cdn.alpinelinux.org/alpine/MIRRORS.txt"
 
 echo -n 'Warmup..'
 
-for s in $(wget -qO- http://rsync.alpinelinux.org/alpine/MIRRORS.txt); do
-  wget -T 0.15 -q $s/MIRRORS.txt -O /dev/null 2>&1
+for s in $(wget -qO- "${MIRRORLIST_URL}"); do
+  curl -sSL --connect-timeout 0.5 -m 0.5 -o /dev/null "${s}MIRRORS.txt"
+  # wget -T 0.15 -q "${s}/MIRRORS.txt" -O -
   echo -n '.'
 done
 
@@ -13,9 +20,9 @@ echo '. Done'
 
 data=""
 
-for s in $(wget -qO- http://rsync.alpinelinux.org/alpine/MIRRORS.txt); do
+for s in $(wget -qO- "${MIRRORLIST_URL}"); do
   echo -n "$s.."
-  t=$(time -f "%E" wget -T 0.35 -q $s/MIRRORS.txt -O /dev/null 2>&1)
+  t=$(time -f "%E" wget -T 0.35 -q "${s}MIRRORS.txt" -O /dev/null)
   echo ". $t"
   data="$data$t $s\n"
 done
