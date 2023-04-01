@@ -33,6 +33,7 @@
 
 - link:
     ~/.Xresources: X11/Xresources
+    ~/.asoundrc: misc/asound.conf
     ~/.bash_aliases: shell/bash/bash_aliases
     ~/.bash_logout: shell/bash/bash_logout
     ~/.bash_profile: shell/bash/bash_profile
