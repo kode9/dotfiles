@@ -47,3 +47,6 @@ ehthumbs.db
 .cache/
 .clangd/
 TAGS
+
+# Misc
+nohup.out

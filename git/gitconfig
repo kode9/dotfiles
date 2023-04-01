@@ -34,7 +34,7 @@
 [log]
   decorate=full
 	date = iso8601
-	showSignature = true
+	showSignature = false
 
 [merge]
   conflictstyle = diff3
@@ -132,3 +132,5 @@
 
 [tag]
 	gpgSign = true
+[init]
+	defaultBranch = master
