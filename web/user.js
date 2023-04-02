@@ -1235,6 +1235,8 @@ user_pref("privacy.clearOnShutdown.history", false);   // [DEFAULT: true]
 user_pref("privacy.clearOnShutdown.sessions", false);  // [DEFAULT: true]
 user_pref("privacy.clearOnShutdown.siteSettings", false); // [DEFAULT: false]
 
+// 4504: enable RFP letterboxing [FF67+]
+user_pref("privacy.resistFingerprinting.letterboxing", false); // [HIDDEN PREF]
 // 4520: disable WebGL (Web Graphics Library)
 user_pref("webgl.disabled", false);
 // https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API#WebGL_debugging_and_testing
