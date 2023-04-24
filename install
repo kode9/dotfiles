@@ -16,7 +16,7 @@ cd -- "${_basedir}" >/dev/null || exit 1
 [ -f "${_config}" ] \
   || { echo "Cannot find dotbot config [${_config}]" >&2; exit 1; }
 
-git submodule --quiet update --init --recursive -- "${_dotbot_dir}"
+git submodule --quiet update --init --recursive
 
 [ -f "${_dotbot_bin}" ] && [ -x "${_dotbot_bin}" ] \
   || { echo "Dotbot binary [${_dotbot_bin}] does not exist or is not executable" >&2; exit 1; }

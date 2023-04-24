@@ -4,3 +4,6 @@
 [submodule "bash-git-prompt"]
 	path = 3dparty/bash-git-prompt
 	url = https://github.com/magicmonty/bash-git-prompt.git
+[submodule "alacritty-theme"]
+	path = 3dparty/alacritty-theme
+	url = https://github.com/alacritty/alacritty-theme.git
