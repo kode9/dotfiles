@@ -42,6 +42,8 @@
     ~/.config/alacritty/alacritty.yml: shell/alacritty.yml
     ~/.config/environment.d/environment.conf: misc/environment.conf
     ~/.config/fish/config.fish: shell/fish/config.fish
+    ~/.config/fish/fish_variables: shell/fish/fish_variables
+    ~/.config/fish/functions/fish_prompt.fish: shell/fish/functions/fish_prompt.fish
     ~/.config/gamemode.ini: misc/gamemode.ini
     ~/.config/git/ignore: git/gitignore
     ~/.config/iwgtk.conf: misc/iwgtk.conf
