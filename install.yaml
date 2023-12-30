@@ -39,9 +39,9 @@
     ~/.bash_profile: shell/bash/bash_profile
     ~/.bashrc: shell/bash/bashrc
     ~/.cargo/config.toml: rust/cargo.toml
-    ~/.config/alacritty/alacritty.yml: shell/alacritty/alacritty.yml
+    ~/.config/alacritty/alacritty.toml: shell/alacritty/alacritty.toml
     ~/.config/alacritty/themes: 3dparty/alacritty-theme/themes
-    ~/.config/alacritty/zenburn.yaml: shell/alacritty/zenburn.yaml
+    ~/.config/alacritty/zenburn.toml: shell/alacritty/zenburn.toml
     ~/.config/environment.d/environment.conf: misc/environment.conf
     ~/.config/fish/config.fish: shell/fish/config.fish
     ~/.config/fish/fish_variables: shell/fish/fish_variables

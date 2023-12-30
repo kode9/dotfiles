@@ -1,0 +1,53 @@
+import = ["/home/pluc/.config/alacritty/themes/nord.toml"]
+live_config_reload = true
+
+[cursor]
+unfocused_hollow = true
+
+[cursor.style]
+shape = "Underline"
+
+[font]
+size = 10.0
+
+[font.bold]
+family = "Iosevka"
+
+[font.bold_italic]
+family = "Iosevka"
+
+[font.italic]
+family = "Iosevka"
+
+[font.normal]
+family = "Iosevka"
+
+[mouse]
+hide_when_typing = true
+bindings = [
+{mods = "Control", mouse = "Left", action = "Copy"},
+{mouse = "Back", action = "Copy"},
+{mods = "Control", mouse = "Right", action = "Paste"},
+{mouse = "Forward", action = "Paste"},
+{mouse = "Middle", action = "PasteSelection"},
+{mouse = "Right", action = "ExpandSelection"}
+]
+
+[scrolling]
+history = 100000
+multiplier = 1
+
+[shell]
+args = ["-u"]
+program = "/usr/bin/tmux"
+
+[window]
+decorations = "none"
+dynamic_padding = true
+dynamic_title = true
+resize_increments = true
+startup_mode = "Maximized"
+
+[window.padding]
+x = 1
+y = 0
